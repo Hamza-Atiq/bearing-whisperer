@@ -1,0 +1,2 @@
+# Sealed rules files: stored byte for byte, so their SHA-256 fingerprints match on every machine.
+prereg/*.json -text

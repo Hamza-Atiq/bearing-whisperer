@@ -1,0 +1,4 @@
+{"id": "hamzaatique/p14-bearing-features2", "title": "p14 bearing features2", "code_file": "run_features2.py",
+ "language": "python", "kernel_type": "script", "is_private": true, "enable_gpu": false, "enable_tpu": false,
+ "enable_internet": true, "dataset_sources": ["hamzaatique/p14-bearing-code"], "competition_sources": [],
+ "kernel_sources": [], "model_sources": []}

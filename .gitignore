@@ -1,0 +1,18 @@
+# secrets and local environment
+.env
+.venv/
+.streamlit/secrets.toml
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# data derived from the CC BY-NC dataset: never re-hosted (only results/ is published)
+data/
+
+# private working documents (not part of the code)
+CLAUDE.md
+HANDOVER.md
+research/
+specs/
+plans/
+assets/

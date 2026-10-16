@@ -1,0 +1,23 @@
+{
+  "written": "2026-10-16",
+  "why": "Round 1 (sealed, fingerprint below) scored near chance. Diagnostics showed each bearing's own fingerprint is louder than damage. Round 2 tries features meant to cancel the fingerprint, chosen fairly.",
+  "round1_fingerprint": "383402e7d27e20edc020ccb39160393b587bca00d18fd59b30eb2925d394173e",
+  "candidates": [
+    {"name": "shape+lr", "features": ["band_"], "model": "lr"},
+    {"name": "contrast+lr", "features": ["contrast_"], "model": "lr"},
+    {"name": "contrast_clicks+lr", "features": ["contrast_", "click_"], "model": "lr"},
+    {"name": "shape+rf", "features": ["band_"], "model": "rf"},
+    {"name": "contrast+rf", "features": ["contrast_"], "model": "rf"},
+    {"name": "contrast_clicks+rf", "features": ["contrast_", "click_"], "model": "rf"}
+  ],
+  "setting_columns_always_added": ["rpm", "torque"],
+  "models": {
+    "lr": "StandardScaler + LogisticRegression(C=1.0, class_weight='balanced', max_iter=5000), as round 1",
+    "rf": "RandomForestClassifier(n_estimators=300, min_samples_leaf=10, max_features='sqrt', class_weight='balanced_subsample', random_state=0)"
+  },
+  "selection": "inside each outer fold: for every candidate, inner out-of-fold scores on the 5 training groups, calibrated and cut with the round-1 line rule; the candidate with the highest inner balanced accuracy is chosen; ties go to the earlier candidate. Test bearings are never used to choose.",
+  "settings": ["lab", "32k_12b", "16k_12b", "8k_12b", "16k_10b"],
+  "plant_switch": "the plant view uses round 2's selected detector at 16k_12b only if the lower end of its 95% range at 16k_12b is above 0.5; otherwise it stays on round 1",
+  "same_as_round1": ["folds", "line rule", "handoff_share", "medium_upto_share", "urgency", "plant condition, combine and min_recordings", "bootstrap", "flag_gap_ba"],
+  "reported": "both rounds; every candidate's own score; round 1 stays labelled as the result sealed first"
+}

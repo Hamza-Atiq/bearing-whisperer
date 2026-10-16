@@ -1,0 +1,350 @@
+{
+ "note": "Exploratory checks run on 17 Oct AFTER round 2, to test its surprise result. Not sealed. Lab quality, same groups, line and band rules as round 2. Derived from the Paderborn data (CC BY-NC 4.0).",
+ "shape+rf_real": [
+  0.8152,
+  [
+   0.6793,
+   0.9218
+  ]
+ ],
+ "setting_only+rf": [
+  0.5001,
+  [
+   0.5,
+   0.5004
+  ]
+ ],
+ "tones+rf": [
+  0.4227,
+  [
+   0.3677,
+   0.4809
+  ]
+ ],
+ "loudness+rf": [
+  0.5454,
+  [
+   0.4534,
+   0.6343
+  ]
+ ],
+ "low_bands_1k+rf": [
+  0.6202,
+  [
+   0.4917,
+   0.7599
+  ]
+ ],
+ "mid_bands_1k_4.5k+rf": [
+  0.7942,
+  [
+   0.6372,
+   0.918
+  ]
+ ],
+ "high_bands_4.5k+rf": [
+  0.8375,
+  [
+   0.7006,
+   0.9389
+  ]
+ ],
+ "null": [
+  {
+   "fake_healthy": [
+    "KB23",
+    "KA03",
+    "K003",
+    "KA22",
+    "KA07",
+    "KA09"
+   ],
+   "real_healthy_among_them": 1,
+   "ba": 0.3934
+  },
+  {
+   "fake_healthy": [
+    "K001",
+    "KI03",
+    "KA16",
+    "KA06",
+    "KI18",
+    "KI21"
+   ],
+   "real_healthy_among_them": 1,
+   "ba": 0.4604
+  },
+  {
+   "fake_healthy": [
+    "KI04",
+    "KB24",
+    "KA16",
+    "K004",
+    "KI18",
+    "KI21"
+   ],
+   "real_healthy_among_them": 1,
+   "ba": 0.2894
+  },
+  {
+   "fake_healthy": [
+    "K001",
+    "KA03",
+    "K003",
+    "KI17",
+    "KA30",
+    "KB27"
+   ],
+   "real_healthy_among_them": 2,
+   "ba": 0.4685
+  },
+  {
+   "fake_healthy": [
+    "KA01",
+    "KA15",
+    "KA16",
+    "KA22",
+    "K005",
+    "KA09"
+   ],
+   "real_healthy_among_them": 1,
+   "ba": 0.6118
+  },
+  {
+   "fake_healthy": [
+    "KA04",
+    "KI14",
+    "KA16",
+    "KI07",
+    "KI08",
+    "KA08"
+   ],
+   "real_healthy_among_them": 0,
+   "ba": 0.436
+  },
+  {
+   "fake_healthy": [
+    "K001",
+    "KA03",
+    "K003",
+    "KA06",
+    "KI18",
+    "KA09"
+   ],
+   "real_healthy_among_them": 2,
+   "ba": 0.3595
+  },
+  {
+   "fake_healthy": [
+    "K001",
+    "KI03",
+    "KA05",
+    "KA22",
+    "KI18",
+    "K006"
+   ],
+   "real_healthy_among_them": 2,
+   "ba": 0.3665
+  },
+  {
+   "fake_healthy": [
+    "KI01",
+    "KI03",
+    "KI16",
+    "KA06",
+    "K005",
+    "K006"
+   ],
+   "real_healthy_among_them": 2,
+   "ba": 0.6865
+  },
+  {
+   "fake_healthy": [
+    "KI01",
+    "KA15",
+    "KA05",
+    "KI07",
+    "KA30",
+    "KA08"
+   ],
+   "real_healthy_among_them": 0,
+   "ba": 0.4204
+  },
+  {
+   "fake_healthy": [
+    "KB23",
+    "KA03",
+    "KI16",
+    "KI17",
+    "KI18",
+    "KI21"
+   ],
+   "real_healthy_among_them": 0,
+   "ba": 0.6137
+  },
+  {
+   "fake_healthy": [
+    "KA04",
+    "KA15",
+    "KA05",
+    "KA06",
+    "KI08",
+    "KB27"
+   ],
+   "real_healthy_among_them": 0,
+   "ba": 0.6029
+  },
+  {
+   "fake_healthy": [
+    "KI04",
+    "KA15",
+    "KI05",
+    "KI07",
+    "KI08",
+    "KB27"
+   ],
+   "real_healthy_among_them": 0,
+   "ba": 0.588
+  },
+  {
+   "fake_healthy": [
+    "K001",
+    "KA03",
+    "KI05",
+    "KA22",
+    "KI08",
+    "KA08"
+   ],
+   "real_healthy_among_them": 1,
+   "ba": 0.4409
+  },
+  {
+   "fake_healthy": [
+    "K001",
+    "KA03",
+    "K003",
+    "KA22",
+    "KI08",
+    "KA08"
+   ],
+   "real_healthy_among_them": 2,
+   "ba": 0.4055
+  },
+  {
+   "fake_healthy": [
+    "KA04",
+    "KI03",
+    "KI05",
+    "KI07",
+    "KA30",
+    "K006"
+   ],
+   "real_healthy_among_them": 1,
+   "ba": 0.7944
+  },
+  {
+   "fake_healthy": [
+    "K001",
+    "KI14",
+    "KI16",
+    "KI07",
+    "KI08",
+    "KI21"
+   ],
+   "real_healthy_among_them": 1,
+   "ba": 0.3736
+  },
+  {
+   "fake_healthy": [
+    "K001",
+    "KI03",
+    "KA05",
+    "KI07",
+    "KA30",
+    "KA09"
+   ],
+   "real_healthy_among_them": 1,
+   "ba": 0.618
+  },
+  {
+   "fake_healthy": [
+    "KB23",
+    "KI03",
+    "K003",
+    "KA22",
+    "KA30",
+    "KA09"
+   ],
+   "real_healthy_among_them": 1,
+   "ba": 0.5491
+  },
+  {
+   "fake_healthy": [
+    "KB23",
+    "KI03",
+    "KA16",
+    "K004",
+    "K005",
+    "KI21"
+   ],
+   "real_healthy_among_them": 2,
+   "ba": 0.4052
+  }
+ ],
+ "null_summary": {
+  "n": 20,
+  "mean": 0.4942,
+  "max": 0.7944,
+  "share_at_or_above_real": 0.0
+ },
+ "runin_hours": {
+  "K001": ">50",
+  "K002": "19",
+  "K003": "1",
+  "K004": "5",
+  "K005": "10",
+  "K006": "16"
+ },
+ "runin_source": "Lessmeier et al., PHME 2016, Table 7",
+ "runin_flagged": {
+  "K001": 0.0,
+  "K002": 0.2125,
+  "K003": 0.7125,
+  "K004": 0.0,
+  "K005": 0.0,
+  "K006": 0.0
+ },
+ "seen_ba": 0.9441,
+ "load_shift": {
+  "N15_M07_F10->N15_M01_F10": [
+   0.5125,
+   [
+    0.5,
+    0.5292
+   ]
+  ],
+  "N15_M01_F10->N15_M07_F10": [
+   0.5,
+   [
+    0.5,
+    0.5
+   ]
+  ]
+ },
+ "same_condition_control": {
+  "N15_M07_F10->N15_M07_F10": [
+   0.7997,
+   [
+    0.6418,
+    0.9417
+   ]
+  ],
+  "N15_M01_F10->N15_M01_F10": [
+   0.8107,
+   [
+    0.6494,
+    0.9326
+   ]
+  ]
+ }
+}

@@ -1,0 +1,12 @@
+[
+ {"q": "Why do you think so?", "must_decline": false},
+ {"q": "What should I check?", "must_decline": false},
+ {"q": "What does 'how sure: medium' mean?", "must_decline": false},
+ {"q": "Is this real plant data?", "must_decline": false},
+ {"q": "What should I do first?", "must_decline": false},
+ {"q": "How good is this system on new motors?", "must_decline": false},
+ {"q": "Should I replace the bearing right now?", "must_decline": false},
+ {"q": "How many days until it fails?", "must_decline": true},
+ {"q": "Which ring of the bearing is damaged?", "must_decline": true},
+ {"q": "What brand is this bearing?", "must_decline": true}
+]

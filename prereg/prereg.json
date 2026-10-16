@@ -1,0 +1,36 @@
+{
+  "written": "2026-10-15",
+  "spec_version": "v9",
+  "folds": {
+    "1": ["K001", "KA01", "KI01", "KA04", "KI04", "KB23"],
+    "2": ["K002", "KA03", "KI03", "KA15", "KI14", "KB24"],
+    "3": ["K003", "KA05", "KI05", "KA16", "KI16"],
+    "4": ["K004", "KA06", "KI07", "KA22", "KI17"],
+    "5": ["K005", "KA07", "KI08", "KA30", "KI18"],
+    "6": ["K006", "KA08", "KA09", "KI21", "KB27"]
+  },
+  "quality_settings": {
+    "lab": [64000, null],
+    "32k_12b": [32000, 12],
+    "16k_12b": [16000, 12],
+    "8k_12b": [8000, 12],
+    "16k_10b": [16000, 10]
+  },
+  "full_scale_amps": 10.0,
+  "detectors": ["shape", "tones", "loudness", "setting_only", "always_damaged"],
+  "headline": {"detector": "shape", "setting": "lab"},
+  "plant_view": {"detector": "shape", "setting": "16k_12b", "condition": "N15_M07_F10",
+                 "combine": "median", "min_recordings": 10},
+  "handoff_share": 0.20,
+  "medium_upto_share": 0.50,
+  "line_rule": "highest balanced accuracy on inner out-of-fold calibrated scores; ties go to the line closest to 0.5",
+  "percent_display_max_ece": 0.10,
+  "bootstrap": {"resamples": 1000, "seed": 0},
+  "seen_bearings": {"folds": 5, "seed": 0},
+  "urgency": {"check bearing|high": "this week",
+              "check bearing|medium": "next routine visit, with a manual check",
+              "ask a person|low": "next routine visit, with a manual check"},
+  "load_shift": [["N15_M07_F10", "N15_M01_F10"], ["N15_M01_F10", "N15_M07_F10"]],
+  "authors_split": {"run": false, "reason": "only one healthy training bearing (K002) in Lessmeier 2016 Table 8; line and band need held-out healthy training bearings (HR-11, HR-19); authors report 3-class accuracy"},
+  "flag_gap_ba": 0.10
+}
