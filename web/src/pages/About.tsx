@@ -1,4 +1,5 @@
 import type { AppData } from '../data'
+import { sortMotors } from '../data'
 import { Term } from '../components/Term'
 
 function Box({ x, y, w, h, title, sub, dark, amd }: { x: number; y: number; w: number; h: number; title: string; sub: string;
@@ -19,6 +20,7 @@ const Arrow = ({ x1, y1, x2, y2 }: { x1: number; y1: number; x2: number; y2: num
 
 export function AboutPage({ data }: { data: AppData }) {
   const rounds = data.proof.rounds
+  const first = sortMotors(data.motors)[0]
   return (
     <div className="stack" style={{ gap: 18 }}>
       <h1>How it works</h1>
@@ -61,7 +63,7 @@ export function AboutPage({ data }: { data: AppData }) {
             <li>the chart explainer, where a vision model reads the same picture you see.</li>
           </ul>
           <p className="small muted">Without this layer a technician gets a spectrum and a probability. With it they get
-            "go to Motor 30 this week, confirm with a vibration check first".</p>
+            "go to {first.motor_name}{first.urgency ? ` ${first.urgency}` : ''}, confirm with a vibration check first".</p>
         </section>
         <section className="panel stack">
           <h2>How it was tested</h2>

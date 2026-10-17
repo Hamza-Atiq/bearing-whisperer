@@ -8,7 +8,7 @@ fact-checked before it is shown.
 
 Entry for the AMD Developer Hackathon ACT III, Track 1 "Intelligent Industry".
 
-**App:** _link added after deployment_
+**App:** https://bearing-whisperer.vercel.app/ (opens in any browser, no install)
 
 ## The honest result in one table
 
