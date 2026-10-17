@@ -1,155 +1,128 @@
 # Bearing Whisperer
 
 Can the motor current a drive already measures tell a damaged bearing from a healthy one, when it is tested
-honestly on bearings it has never seen? This project measures that on public lab data, and wraps the answer in a
-small app that tells a technician which motor to check first, how sure it is, and when to call a person.
+honestly on bearings it has never seen, and at a load it was not trained on? This project measures that on public
+lab data, and wraps the answer in a web app that tells a technician which motor to check first, how sure it is, and
+when to call a person. An open model on AMD GPUs does all the explaining and planning, and every word it writes is
+fact-checked before it is shown.
 
 Entry for the AMD Developer Hackathon ACT III, Track 1 "Intelligent Industry".
 
 **App:** _link added after deployment_
 
-## The honest result
+## The honest result in one table
 
-All numbers come from `results/summary.json` (pre-registration fingerprint `383402e7d27e...`).
+Balanced accuracy on bearings the detector never saw (0.50 = coin flip). 95% ranges come from resampling whole
+bearings. Every number is in `results/summary.json` and `results/round3.json`.
 
-| | Balanced accuracy |
-| --- | --- |
-| **Honest: bearings the detector never saw** ("shape" detector, lab quality) | **0.51** (95% range over bearings 0.40 to 0.63) |
-| Inflated: the same bearings in training and testing (the common way) | 0.71 |
+| | Same load, lab quality | **New load** (trained at one load, tested at the other) | Inflated (bearings seen) |
+| --- | --- | --- | --- |
+| Round 1 (sealed first) | 0.51 (0.40 to 0.63) | 0.50 and 0.58 | 0.71 |
+| Round 2 (sealed separately) | 0.82 (0.68 to 0.92) | 0.51 and 0.50 (checked after round 2) | 0.94 |
+| **Round 3 (sealed separately; runs the app)** | **0.83 (0.69 to 0.94)** | **0.79 (0.62 to 0.93) and 0.83 (0.72 to 0.93)** | 0.95 |
 
-On bearings it never saw, a current-only detector is about as good as a coin toss here. Its main weakness is
-false alarms: it flags 0.75 of healthy recordings and misses 0.23 of damaged ones. The 0.71 you get by testing
-on bearings it already saw is the trap many published results fall into. A strict published audit found the
-same pattern for motor current (Cekic and Akan, Energies 2026).
+At the drive-like quality the app uses (16 kHz, 12 bit, simulated), round 3 scores 0.82 at the same load and 0.75
+(0.58 to 0.89) and 0.77 (0.64 to 0.87) at a new load. For comparison, a strict published audit that also changed
+the operating condition found 0.736 at best for motor current (Cekic and Akan, Energies 2026); it is a different
+set-up, so this is a yardstick, not a head-to-head.
 
-**It does not beat the simple baselines** (lab quality): always "damaged" 0.50, one loudness number 0.43, speed
-and load setting only 0.49 (at chance, so the setting does not leak the answer). The physics check "tones" (only
-the classic bearing pitches) scores 0.42, with its whole 95% range (0.35 to 0.48) below chance.
+**Per motor in the app** (round 3, 16 kHz / 12 bit, one condition): it marks "check bearing" on 73% of 26 damaged
+motors and on none of the 6 healthy ones; it hands 2 of the 6 healthy motors to a person instead of guessing.
 
-**Why:** each bearing carries its own fingerprint in the current (mounting, run-in time), and it is louder than
-the damage. A simple model can tell which of the 32 bearings a recording came from 77% of the time
-(a one-off diagnostic, 16 Oct). With only six healthy bearings, a detector learns the healthy
-bearings' fingerprints instead of "healthy".
+## How we got there (three sealed rounds)
 
-**Drive-like quality (simulated):** "shape" drops from 0.51 at lab quality to 0.38 at 8 kHz / 12 bit. That loss
-of 0.13 is above the 0.10 flag fixed in advance, which suggests it leaned on high-pitch content. It is a flag, not
-a proof. "tones" barely changes (0.42 to 0.43).
+Each round's rules were written down and fingerprinted (SHA-256) before it touched the test bearings, and every
+round stays reported, including the ones that failed.
 
-**Per motor (round 1 at 16 kHz / 12 bit, one operating condition):** flags 65% of 26 damaged motors and 83% of 6
-healthy motors; the motor it would list first is a healthy bearing.
+1. **Round 1** (`prereg/prereg.json`): 32 pitch slices of the current's "hiss" and a straight-line model. Near
+   chance: each bearing has its own fingerprint (mounting, run-in) that is louder than the damage.
+2. **Round 2** (`prereg/ROUND2.md`): six combinations, chosen fairly on training bearings only. A random forest on the
+   same 32 slices reached 0.82, but fell to chance at a new load.
+3. **Round 3** (`prereg/ROUND3.md`): the same forest, but each recording is first compared with the fleet at the
+   same speed and load (minus the fleet's middle, divided by its spread). The fleet is the training bearings, used
+   **without their labels**, which is what a drive could know: how its other motors sound at this load, not which
+   are damaged. One detector was fixed in advance; four variants were run and are shown, never chosen.
 
-**Load test:** trained at normal load and tested at low load, it scores 0.50; the reverse scores 0.58.
+## What round 3 still cannot do (said as loudly as the good news)
 
-### Round 2: a second, separately sealed attempt
-
-Round 2 was designed after seeing round 1, and its rules were sealed (fingerprint `c3f518734dac...`) before it ran.
-It tried six combinations of listening set and model, and chose among them **using training bearings only**, so the
-test bearings judged the whole procedure once. Every combination's own score is in `results/summary.json`.
-
-| Round 2 (selected: the same 32 pitch bands, with a random forest instead of a straight-line model) | Balanced accuracy |
-| --- | --- |
-| **Honest: bearings it never saw**, lab quality | **0.82** (95% range 0.68 to 0.92) |
-| Inflated: bearings it had seen (computed after round 2) | 0.94 |
-| Drive-like 16 kHz / 12 bit | 0.80 (0.64 to 0.92) |
-| Drive-like 8 kHz / 12 bit | 0.75 (0.58 to 0.90) |
-
-False alarms on healthy recordings drop from 0.75 to 0.15. Round 2 beats the simple baselines: its whole range is
-above the best one (0.50). Because its whole range at 16 kHz / 12 bit is above 0.5, a rule sealed before round 2
-ran switched the app's plant view to round 2: per motor it now flags 69% of 26 damaged motors and 1 of 6 healthy
-motors.
-
-**Checks run after round 2 to test this surprise** (exploratory, not sealed; `results/round2_checks.json`):
-
-- **Null test:** in each group a random bearing was called "healthy" instead, 20 times. The same method scored 0.49
-  on average; none reached 0.82, but the best reached 0.79. The real healthy bearings do stand out, but the
-  evidence is moderate, not strong.
-- **No leak from the setting:** the same forest given only speed and load scores 0.50.
-- **It is not hearing the bearing pitches (HR-15 flag):** the same forest given only the classic bearing pitches
-  scores 0.42. One pitch range at a time: up to 1 kHz 0.62, 1 to 4.5 kHz 0.79, above 4.5 kHz 0.84. The difference
-  sits in the broad noise above 1 kHz.
-- **It does not carry over to a new load:** trained at normal load and tested at low load it scores 0.51 (reverse
-  0.50), while trained and tested at one single load, with the same amount of data, it scores 0.80 and 0.81.
-- **Run-in time may be part of it:** the healthy bearing with the shortest run-in before the test (K003, 1 hour;
-  Lessmeier 2016 Table 7) is the one round 2 flags most (71% of its recordings); the others (5 to over 50 hours)
-  are flagged 0% to 21%.
-
-**What this means:** with a model that can say "given this speed and load", motor current does separate these six
-healthy bearings from the damaged ones on bearings it never saw. But the separating sound is broad noise, not the
-bearing's own pitches, it only works at loads it was trained on, and it may partly be how long a bearing was run
-in. With six healthy bearings, this project cannot tell damage apart from these other differences.
-
-So the story is: here is how far current alone gets on unseen bearings, here is what an honest check of a good
-number looks like, and here is when to call a person.
+- **It does not hear the bearing's own notes.** Checks run after the sealed round (`results/round3_checks.json`, same
+  method, one pitch range at a time): classic bearing notes only 0.45; pitches up to 1 kHz 0.57; 1 to 4.5 kHz 0.80;
+  above 4.5 kHz 0.83. The result comes from the broad hiss above 1 kHz.
+- **The null test is a real warning.** When a made-up group of six bearings is called "healthy" (10 tries), the
+  method scores 0.49 on average, but one try scored 0.84, as high as the real 0.83 (that group held two real
+  healthy bearings and four with lab-made damage). So the evidence that it hears "healthy" itself is weak; it can
+  also pick up other differences between groups of bearings.
+- **Lab-made damage is caught too** (80% of recordings, real wear 84%), so it is not only hearing a bearing's
+  life-test history. It almost never flags KB23 and KB24, the two real bearings with damage on both rings.
+- **Bigger damage is not flagged more.** Share of damaged recordings flagged (lab): size level 1, 90% (15 bearings);
+  level 2, 77% (9); level 3, 44% (2). If it heard damage size, this should rise. A warning sign.
+- **It cannot tell which ring is damaged:** 0.61 (0.45 to 0.77). The range reaches chance, so the app says "which
+  ring: cannot tell" (rule sealed in advance).
+- **On the dataset authors' own split** (learn on lab-made damage, test on real wear, three answers) it scores 36%
+  accuracy, about guessing (33%) and inside the authors' own motor-current range (27% to 61%). That split has one
+  healthy training bearing; the detector never calls the healthy test bearing healthy.
+- **Run-in may be part of it:** the healthy bearing with the shortest run-in (K003, 1 hour; Lessmeier 2016 Table 7)
+  is the one flagged most (76% of its recordings). The app hands it to a person rather than calling it damaged.
+- **Only six healthy bearings exist.** Every result is exploratory.
+- The tested bearing sits in a separate module on the shaft line, not inside the motor. The current was measured by
+  lab sensors between drive and motor; drive-like quality is simulated, not a real drive's sensor.
+- **Not claimed:** days until failure, bearings inside a motor, any drive brand's sensor.
 
 ## What the app does
 
-- **Plant:** 32 motors (each one lab bearing), marked healthy, check bearing or ask a person, with how sure the
-  detector is. Check-bearing motors come first.
-- **Motor:** a short technician's note, written by an open model on AMD Token Factory and then checked against
-  the detector's facts, shown beside a plain template note built from the same facts. A draft work order that a
-  person must approve, and follow-up questions.
-- **Results:** every number above, per bearing, per condition, per quality, and every run, not only the best.
-- **Business value:** an illustrative example built from the measured rates plus assumptions you can change.
+- **Plant:** 32 motors on one screen, colour-coded (check bearing, ask a person, healthy), each with a tiny picture of
+  its current. The motor to check first is highlighted.
+- **Motor:** the motor's "hiss picture" (how much louder or quieter than the healthy bearings, at each pitch), with
+  the bearing notes and where the detector listens marked. A technician's note, questions in plain words, a draft
+  work order that a person approves.
+- **Plan my shift:** say how much time you have; the AMD assistant asks the plant for what it needs (fleet list,
+  motor facts) using tool calls, and returns an ordered visit list with work orders.
+- **Explain this chart:** a vision model on AMD reads the exact chart the trainee sees and explains it.
+- **Proof:** every round, every honest check, the failures included, as charts.
+- **Value:** an illustrative yearly value you can change with sliders (assumptions are labelled as such).
 
-## What runs on AMD
+## What runs on AMD, and how it is kept honest
 
-The assistant that turns each verdict into a technician's note, answers follow-up questions and drafts work
-orders runs on an open model (Gemma-4-31B-IT, with Qwen3.8-27B as backup) served on AMD GPUs through AMD Token
-Factory. Every note is checked before it is shown: it must name the motor, its status, how sure, the evidence and
-the urgency, it may not add a number, and it must say to confirm with a vibration or ultrasound check. If the
-model fails the check or is offline, the app shows the template note and says so. The detector itself is a small
-model (round 1: logistic regression; round 2, used in the plant view: a random forest of 300 trees) that runs
-anywhere.
+All the language and vision work runs on open models served on AMD GPUs through AMD Token Factory (Gemma-4-31B-IT,
+with Qwen3.8-27B as backup): the notes, the follow-up answers, the shift plan (native tool calls) and the chart
+explainer (image input). The detector itself is small and does not need a GPU.
 
-**How the assistant was tested** (`results/assistant_questions.json`): 10 fixed questions
-written before testing, asked about 3 motors (one per status), 30 answers in all, all from Gemma. 30 of 30 passed the
-automatic check, and all 9 questions it had to refuse (days until failure, which ring is damaged, the brand) were
-refused. Read by hand, 29 of 30 were right; once it refused to explain "how sure: medium" although it had the
-meaning. On 3 motors, the AMD notes and the template notes both matched the detector's facts with nothing invented;
-the AMD notes are shorter and plainer but carry the same facts, so the assistant's clearer value is answering
-follow-up questions.
+Every answer is checked in code before it is shown (`bearing/notes.py`, `bearing/copilot.py`): a note or explanation
+may only use numbers that are in the detector's facts, may not contradict the verdict, and may not predict days to
+failure; a shift plan may only name motors the tools returned, never a healthy motor, never more visits than the time
+allows. If a check fails or the service is down, a fixed template or rule answers instead, and the page says so. The
+key lives only in the server's environment, never in the browser or this repository.
 
-## How the test was kept honest
-
-- The 32 bearings were split into 6 fixed groups, each with one healthy bearing, written down before any result
-  (`prereg/prereg.json`, plain words in `prereg/PREREGISTRATION.md`). Each verdict comes from a model that never
-  saw that bearing.
-- The line between healthy and damaged, and the "ask a person" band, are set only on training bearings, each
-  scored by a model that never saw it.
-- The detector, the quality settings, the plant view, the size of a "large" change (0.10) and the expected outcome
-  were all sealed by SHA-256 fingerprint before any test result. Every run is logged in `results/runs.jsonl`.
-- Round 2 was designed after round 1, and its rules were sealed separately before it ran (`prereg/ROUND2.md`).
-
-## What this cannot rule out
-
-- Healthy bearings differ from damaged ones in run-in time and mounting, not only damage.
-- Shaft-wobble tones sit about 1.4 Hz from every bearing tone at 1,500 rpm and about 0.8 Hz at 900 rpm, where a
-  wobbling shaft tone can spill 1 to 5% of its power into the bearing-tone window (measured by simulation).
-- Only six healthy bearings exist, so the results are exploratory, and the "ask a person" band moves between groups.
-- The tested bearing sits in a separate module on the shaft line, outside the motor. The current was measured by
-  lab sensors between drive and motor; drive-like quality is simulated, not a real drive's sensor.
-- **Not claimed:** days until failure, results for bearings inside a motor, or any drive brand's sensor.
+Assistant test (`results/assistant_questions.json`): 10 fixed questions written before testing, on 3 motors, 30
+answers: 30 passed the automatic check; all 9 trick questions (days until failure, which ring, the brand) were
+declined; 29 of 30 were right when read by Claude. A person's read is pending.
 
 ## Run it
 
 ```bash
 py -3.12 -m venv .venv
 .venv/Scripts/python -m pip install -r requirements.txt
-.venv/Scripts/streamlit run app/streamlit_app.py
+.venv/Scripts/python -m pytest -q                 # tests
+.venv/Scripts/python -m bearing.export_web        # results/ -> web/public/data/app.json (needs data/ features)
+.venv/Scripts/python -m bearing.sync_web          # copies the tested assistant code into web/api/_bearing
+.venv/Scripts/python web/dev_api.py               # local server functions on :8787 (reads AMD_KEY)
+cd web && npm install && npx vite                 # app on :5173
 ```
 
-The app reads `results/`. For the AI notes, put `AMD_KEY` in the environment or in Streamlit secrets; without it
-the app still works with template notes.
+Deploy: `web/` is a Vercel project (Vite build plus Python functions in `web/api/`). Set `AMD_KEY` in the project's
+environment variables. Without it, the app still works with template notes and the rule-based plan.
 
-**To remake the results:** the features were extracted on Kaggle (`kaggle/`, or the Colab cells in
-`colab/RUN_IN_COLAB.md`), which downloads each bearing from Paderborn University, reads it and deletes it. Then
-`python -m bearing.evaluate` (round 1) and `python -m bearing.round2` (round 2). Tests: `python -m pytest -q`.
+**To remake the results:** features were extracted on Kaggle (`kaggle/`, or `colab/RUN_IN_COLAB.md`), which
+downloads each bearing from Paderborn University, reads it and deletes it. Then `python -m bearing.evaluate`
+(round 1), `python -m bearing.round2`, `python -m bearing.round3`, and the checks `python -m bearing.round3_checks`.
+The earlier Streamlit app (`app/`) is kept for reference only.
 
 ## Data and licence
 
 Paderborn University bearing data: C. Lessmeier, J. K. Kimotho, D. Zimmer, W. Sextro, "Condition Monitoring of
 Bearing Damage in Electromechanical Drive Systems by Using Motor Current Signals of Electric Motors: A Benchmark
 Data Set for Data-Driven Classification", PHME 2016. Licence CC BY-NC 4.0. The raw data is not in this repository;
-it is downloaded from its source. The files in `results/` are derived from it and shared under the same licence.
+it is downloaded from its source. The files in `results/` and `web/public/data/` are derived from it and shared
+under the same licence.
 
 Our code: MIT (`LICENSE`).

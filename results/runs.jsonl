@@ -78,3 +78,8 @@
 {"key": "round2|16k_12b", "fingerprint_round2": "c3f518734dac9dd3832994e9f44764702d43107f11f3ecffd3d14598b3d70222", "forced_ba": 0.7978, "chosen": {"1": "shape+rf", "2": "shape+rf", "3": "shape+rf", "4": "shape+rf", "5": "shape+rf", "6": "shape+rf"}}
 {"key": "round2|8k_12b", "fingerprint_round2": "c3f518734dac9dd3832994e9f44764702d43107f11f3ecffd3d14598b3d70222", "forced_ba": 0.7517, "chosen": {"1": "shape+rf", "2": "shape+rf", "3": "shape+rf", "4": "shape+rf", "5": "shape+rf", "6": "shape+rf"}}
 {"key": "round2|16k_10b", "fingerprint_round2": "c3f518734dac9dd3832994e9f44764702d43107f11f3ecffd3d14598b3d70222", "forced_ba": 0.8025, "chosen": {"1": "shape+rf", "2": "shape+rf", "3": "shape+rf", "4": "shape+rf", "5": "shape+rf", "6": "shape+rf"}}
+{"key": "round3|lab", "fingerprint_round3": "85a1fc6046bd3c245a77c13a38a640b30144e4467f99f3d927c5234138e84264", "forced_ba": 0.8307, "new_load": {"N15_M07_F10->N15_M01_F10": 0.7892, "N15_M01_F10->N15_M07_F10": 0.8346}}
+{"key": "round3|32k_12b", "fingerprint_round3": "85a1fc6046bd3c245a77c13a38a640b30144e4467f99f3d927c5234138e84264", "forced_ba": 0.8205, "new_load": {}}
+{"key": "round3|16k_12b", "fingerprint_round3": "85a1fc6046bd3c245a77c13a38a640b30144e4467f99f3d927c5234138e84264", "forced_ba": 0.8194, "new_load": {"N15_M07_F10->N15_M01_F10": 0.7523, "N15_M01_F10->N15_M07_F10": 0.7663}}
+{"key": "round3|8k_12b", "fingerprint_round3": "85a1fc6046bd3c245a77c13a38a640b30144e4467f99f3d927c5234138e84264", "forced_ba": 0.7241, "new_load": {}}
+{"key": "round3|16k_10b", "fingerprint_round3": "85a1fc6046bd3c245a77c13a38a640b30144e4467f99f3d927c5234138e84264", "forced_ba": 0.8314, "new_load": {}}

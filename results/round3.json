@@ -1,0 +1,2730 @@
+{
+ "fingerprint_round3": "85a1fc6046bd3c245a77c13a38a640b30144e4467f99f3d927c5234138e84264",
+ "detector": "shape_fleet+rf",
+ "same_load": {
+  "lab": {
+   "forced_ba": 0.8307,
+   "ci": [
+    0.6874,
+    0.9361
+   ],
+   "false_alarm": 0.1562,
+   "miss": 0.1823,
+   "decided_share": 0.8253,
+   "decided_ba": 0.8504,
+   "decided_nothing": false,
+   "seen_ba": null,
+   "per_condition": {
+    "N09_M07_F10": 0.7965,
+    "N15_M01_F10": 0.8303,
+    "N15_M07_F04": 0.8372,
+    "N15_M07_F10": 0.859
+   },
+   "by_origin": {
+    "artificial": 0.7967,
+    "healthy": 0.1562,
+    "real": 0.8357
+   },
+   "fold_ba": {
+    "1": 0.8025,
+    "2": 0.7863,
+    "3": 0.6,
+    "4": 0.9953,
+    "5": 0.9328,
+    "6": 0.9028
+   },
+   "thresholds": {
+    "1": {
+     "line": 0.7743,
+     "band": 0.1,
+     "medium": 0.1574
+    },
+    "2": {
+     "line": 0.9114,
+     "band": 0.0447,
+     "medium": 0.074
+    },
+    "3": {
+     "line": 0.8741,
+     "band": 0.0757,
+     "medium": 0.1141
+    },
+    "4": {
+     "line": 0.7802,
+     "band": 0.0502,
+     "medium": 0.0922
+    },
+    "5": {
+     "line": 0.8029,
+     "band": 0.0331,
+     "medium": 0.0709
+    },
+    "6": {
+     "line": 0.8559,
+     "band": 0.0408,
+     "medium": 0.0901
+    }
+   },
+   "per_bearing": [
+    {
+     "bearing": "K001",
+     "origin": "healthy",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "K002",
+     "origin": "healthy",
+     "share_flagged": 0.175,
+     "n": 80
+    },
+    {
+     "bearing": "K003",
+     "origin": "healthy",
+     "share_flagged": 0.7625,
+     "n": 80
+    },
+    {
+     "bearing": "K004",
+     "origin": "healthy",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "K005",
+     "origin": "healthy",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "K006",
+     "origin": "healthy",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA01",
+     "origin": "artificial",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA03",
+     "origin": "artificial",
+     "share_flagged": 0.8,
+     "n": 80
+    },
+    {
+     "bearing": "KA04",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA05",
+     "origin": "artificial",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA06",
+     "origin": "artificial",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA07",
+     "origin": "artificial",
+     "share_flagged": 0.7,
+     "n": 80
+    },
+    {
+     "bearing": "KA08",
+     "origin": "artificial",
+     "share_flagged": 0.7342,
+     "n": 79
+    },
+    {
+     "bearing": "KA09",
+     "origin": "artificial",
+     "share_flagged": 0.575,
+     "n": 80
+    },
+    {
+     "bearing": "KA15",
+     "origin": "real",
+     "share_flagged": 0.9625,
+     "n": 80
+    },
+    {
+     "bearing": "KA16",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA22",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA30",
+     "origin": "real",
+     "share_flagged": 0.925,
+     "n": 80
+    },
+    {
+     "bearing": "KB23",
+     "origin": "real",
+     "share_flagged": 0.025,
+     "n": 80
+    },
+    {
+     "bearing": "KB24",
+     "origin": "real",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "KB27",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI01",
+     "origin": "artificial",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI03",
+     "origin": "artificial",
+     "share_flagged": 0.975,
+     "n": 80
+    },
+    {
+     "bearing": "KI04",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI05",
+     "origin": "artificial",
+     "share_flagged": 0.9625,
+     "n": 80
+    },
+    {
+     "bearing": "KI07",
+     "origin": "artificial",
+     "share_flagged": 0.975,
+     "n": 80
+    },
+    {
+     "bearing": "KI08",
+     "origin": "artificial",
+     "share_flagged": 0.8375,
+     "n": 80
+    },
+    {
+     "bearing": "KI14",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI16",
+     "origin": "real",
+     "share_flagged": 0.8875,
+     "n": 80
+    },
+    {
+     "bearing": "KI17",
+     "origin": "real",
+     "share_flagged": 0.9875,
+     "n": 80
+    },
+    {
+     "bearing": "KI18",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI21",
+     "origin": "real",
+     "share_flagged": 0.9125,
+     "n": 80
+    }
+   ],
+   "ece": 0.1062,
+   "n_recordings": 2559,
+   "n_unusable": 1
+  },
+  "32k_12b": {
+   "forced_ba": 0.8205,
+   "ci": [
+    0.6791,
+    0.9365
+   ],
+   "false_alarm": 0.1854,
+   "miss": 0.1736,
+   "decided_share": 0.812,
+   "decided_ba": 0.8554,
+   "decided_nothing": false,
+   "seen_ba": null,
+   "per_condition": {
+    "N09_M07_F10": 0.7721,
+    "N15_M01_F10": 0.8396,
+    "N15_M07_F04": 0.8356,
+    "N15_M07_F10": 0.8346
+   },
+   "by_origin": {
+    "artificial": 0.806,
+    "healthy": 0.1854,
+    "real": 0.8438
+   },
+   "fold_ba": {
+    "1": 0.8025,
+    "2": 0.7288,
+    "3": 0.5781,
+    "4": 0.9828,
+    "5": 0.9531,
+    "6": 0.9091
+   },
+   "thresholds": {
+    "1": {
+     "line": 0.7493,
+     "band": 0.1293,
+     "medium": 0.1999
+    },
+    "2": {
+     "line": 0.8471,
+     "band": 0.1038,
+     "medium": 0.1364
+    },
+    "3": {
+     "line": 0.8526,
+     "band": 0.103,
+     "medium": 0.1392
+    },
+    "4": {
+     "line": 0.7978,
+     "band": 0.0371,
+     "medium": 0.0785
+    },
+    "5": {
+     "line": 0.7931,
+     "band": 0.0392,
+     "medium": 0.0814
+    },
+    "6": {
+     "line": 0.8553,
+     "band": 0.0429,
+     "medium": 0.093
+    }
+   },
+   "per_bearing": [
+    {
+     "bearing": "K001",
+     "origin": "healthy",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "K002",
+     "origin": "healthy",
+     "share_flagged": 0.3375,
+     "n": 80
+    },
+    {
+     "bearing": "K003",
+     "origin": "healthy",
+     "share_flagged": 0.775,
+     "n": 80
+    },
+    {
+     "bearing": "K004",
+     "origin": "healthy",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "K005",
+     "origin": "healthy",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "K006",
+     "origin": "healthy",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA01",
+     "origin": "artificial",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA03",
+     "origin": "artificial",
+     "share_flagged": 0.975,
+     "n": 80
+    },
+    {
+     "bearing": "KA04",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA05",
+     "origin": "artificial",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA06",
+     "origin": "artificial",
+     "share_flagged": 0.9875,
+     "n": 80
+    },
+    {
+     "bearing": "KA07",
+     "origin": "artificial",
+     "share_flagged": 0.8,
+     "n": 80
+    },
+    {
+     "bearing": "KA08",
+     "origin": "artificial",
+     "share_flagged": 0.7342,
+     "n": 79
+    },
+    {
+     "bearing": "KA09",
+     "origin": "artificial",
+     "share_flagged": 0.575,
+     "n": 80
+    },
+    {
+     "bearing": "KA15",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA16",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA22",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA30",
+     "origin": "real",
+     "share_flagged": 0.9875,
+     "n": 80
+    },
+    {
+     "bearing": "KB23",
+     "origin": "real",
+     "share_flagged": 0.025,
+     "n": 80
+    },
+    {
+     "bearing": "KB24",
+     "origin": "real",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "KB27",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI01",
+     "origin": "artificial",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI03",
+     "origin": "artificial",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI04",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI05",
+     "origin": "artificial",
+     "share_flagged": 0.8625,
+     "n": 80
+    },
+    {
+     "bearing": "KI07",
+     "origin": "artificial",
+     "share_flagged": 0.9,
+     "n": 80
+    },
+    {
+     "bearing": "KI08",
+     "origin": "artificial",
+     "share_flagged": 0.8375,
+     "n": 80
+    },
+    {
+     "bearing": "KI14",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI16",
+     "origin": "real",
+     "share_flagged": 0.8625,
+     "n": 80
+    },
+    {
+     "bearing": "KI17",
+     "origin": "real",
+     "share_flagged": 0.975,
+     "n": 80
+    },
+    {
+     "bearing": "KI18",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI21",
+     "origin": "real",
+     "share_flagged": 0.9625,
+     "n": 80
+    }
+   ],
+   "ece": 0.1038,
+   "n_recordings": 2559,
+   "n_unusable": 1
+  },
+  "16k_12b": {
+   "forced_ba": 0.8194,
+   "ci": [
+    0.6622,
+    0.9408
+   ],
+   "false_alarm": 0.2062,
+   "miss": 0.1549,
+   "decided_share": 0.8175,
+   "decided_ba": 0.8583,
+   "decided_nothing": false,
+   "seen_ba": null,
+   "per_condition": {
+    "N09_M07_F10": 0.7808,
+    "N15_M01_F10": 0.8335,
+    "N15_M07_F04": 0.8378,
+    "N15_M07_F10": 0.8256
+   },
+   "by_origin": {
+    "artificial": 0.8436,
+    "healthy": 0.2062,
+    "real": 0.8464
+   },
+   "fold_ba": {
+    "1": 0.8025,
+    "2": 0.7263,
+    "3": 0.5359,
+    "4": 0.9859,
+    "5": 0.9703,
+    "6": 0.9326
+   },
+   "thresholds": {
+    "1": {
+     "line": 0.7785,
+     "band": 0.0958,
+     "medium": 0.1703
+    },
+    "2": {
+     "line": 0.8086,
+     "band": 0.1173,
+     "medium": 0.1738
+    },
+    "3": {
+     "line": 0.8186,
+     "band": 0.1244,
+     "medium": 0.1691
+    },
+    "4": {
+     "line": 0.7822,
+     "band": 0.0363,
+     "medium": 0.0715
+    },
+    "5": {
+     "line": 0.7791,
+     "band": 0.0406,
+     "medium": 0.0854
+    },
+    "6": {
+     "line": 0.8026,
+     "band": 0.0882,
+     "medium": 0.1442
+    }
+   },
+   "per_bearing": [
+    {
+     "bearing": "K001",
+     "origin": "healthy",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "K002",
+     "origin": "healthy",
+     "share_flagged": 0.3375,
+     "n": 80
+    },
+    {
+     "bearing": "K003",
+     "origin": "healthy",
+     "share_flagged": 0.875,
+     "n": 80
+    },
+    {
+     "bearing": "K004",
+     "origin": "healthy",
+     "share_flagged": 0.0125,
+     "n": 80
+    },
+    {
+     "bearing": "K005",
+     "origin": "healthy",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "K006",
+     "origin": "healthy",
+     "share_flagged": 0.0125,
+     "n": 80
+    },
+    {
+     "bearing": "KA01",
+     "origin": "artificial",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA03",
+     "origin": "artificial",
+     "share_flagged": 0.95,
+     "n": 80
+    },
+    {
+     "bearing": "KA04",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA05",
+     "origin": "artificial",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA06",
+     "origin": "artificial",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA07",
+     "origin": "artificial",
+     "share_flagged": 0.9125,
+     "n": 80
+    },
+    {
+     "bearing": "KA08",
+     "origin": "artificial",
+     "share_flagged": 0.8481,
+     "n": 79
+    },
+    {
+     "bearing": "KA09",
+     "origin": "artificial",
+     "share_flagged": 0.7,
+     "n": 80
+    },
+    {
+     "bearing": "KA15",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA16",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA22",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA30",
+     "origin": "real",
+     "share_flagged": 0.9875,
+     "n": 80
+    },
+    {
+     "bearing": "KB23",
+     "origin": "real",
+     "share_flagged": 0.025,
+     "n": 80
+    },
+    {
+     "bearing": "KB24",
+     "origin": "real",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "KB27",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI01",
+     "origin": "artificial",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI03",
+     "origin": "artificial",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI04",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI05",
+     "origin": "artificial",
+     "share_flagged": 0.8875,
+     "n": 80
+    },
+    {
+     "bearing": "KI07",
+     "origin": "artificial",
+     "share_flagged": 0.9625,
+     "n": 80
+    },
+    {
+     "bearing": "KI08",
+     "origin": "artificial",
+     "share_flagged": 0.8625,
+     "n": 80
+    },
+    {
+     "bearing": "KI14",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI16",
+     "origin": "real",
+     "share_flagged": 0.9,
+     "n": 80
+    },
+    {
+     "bearing": "KI17",
+     "origin": "real",
+     "share_flagged": 0.975,
+     "n": 80
+    },
+    {
+     "bearing": "KI18",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI21",
+     "origin": "real",
+     "share_flagged": 0.9625,
+     "n": 80
+    }
+   ],
+   "ece": 0.1119,
+   "n_recordings": 2559,
+   "n_unusable": 1
+  },
+  "8k_12b": {
+   "forced_ba": 0.7241,
+   "ci": [
+    0.5398,
+    0.8938
+   ],
+   "false_alarm": 0.2979,
+   "miss": 0.254,
+   "decided_share": 0.7816,
+   "decided_ba": 0.8055,
+   "decided_nothing": false,
+   "seen_ba": null,
+   "per_condition": {
+    "N09_M07_F10": 0.699,
+    "N15_M01_F10": 0.7472,
+    "N15_M07_F04": 0.7369,
+    "N15_M07_F10": 0.7131
+   },
+   "by_origin": {
+    "artificial": 0.6517,
+    "healthy": 0.2979,
+    "real": 0.8268
+   },
+   "fold_ba": {
+    "1": 0.7737,
+    "2": 0.4888,
+    "3": 0.5,
+    "4": 0.8813,
+    "5": 0.9187,
+    "6": 0.7994
+   },
+   "thresholds": {
+    "1": {
+     "line": 0.7964,
+     "band": 0.0672,
+     "medium": 0.1461
+    },
+    "2": {
+     "line": 0.6736,
+     "band": 0.1735,
+     "medium": 0.2885
+    },
+    "3": {
+     "line": 0.8189,
+     "band": 0.1351,
+     "medium": 0.1721
+    },
+    "4": {
+     "line": 0.7978,
+     "band": 0.028,
+     "medium": 0.0598
+    },
+    "5": {
+     "line": 0.7911,
+     "band": 0.0298,
+     "medium": 0.0624
+    },
+    "6": {
+     "line": 0.7843,
+     "band": 0.0912,
+     "medium": 0.1531
+    }
+   },
+   "per_bearing": [
+    {
+     "bearing": "K001",
+     "origin": "healthy",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "K002",
+     "origin": "healthy",
+     "share_flagged": 0.825,
+     "n": 80
+    },
+    {
+     "bearing": "K003",
+     "origin": "healthy",
+     "share_flagged": 0.9375,
+     "n": 80
+    },
+    {
+     "bearing": "K004",
+     "origin": "healthy",
+     "share_flagged": 0.0125,
+     "n": 80
+    },
+    {
+     "bearing": "K005",
+     "origin": "healthy",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "K006",
+     "origin": "healthy",
+     "share_flagged": 0.0125,
+     "n": 80
+    },
+    {
+     "bearing": "KA01",
+     "origin": "artificial",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA03",
+     "origin": "artificial",
+     "share_flagged": 0.975,
+     "n": 80
+    },
+    {
+     "bearing": "KA04",
+     "origin": "real",
+     "share_flagged": 0.7,
+     "n": 80
+    },
+    {
+     "bearing": "KA05",
+     "origin": "artificial",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA06",
+     "origin": "artificial",
+     "share_flagged": 0.3375,
+     "n": 80
+    },
+    {
+     "bearing": "KA07",
+     "origin": "artificial",
+     "share_flagged": 0.55,
+     "n": 80
+    },
+    {
+     "bearing": "KA08",
+     "origin": "artificial",
+     "share_flagged": 0.2658,
+     "n": 79
+    },
+    {
+     "bearing": "KA09",
+     "origin": "artificial",
+     "share_flagged": 0.1875,
+     "n": 80
+    },
+    {
+     "bearing": "KA15",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA16",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA22",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA30",
+     "origin": "real",
+     "share_flagged": 0.9625,
+     "n": 80
+    },
+    {
+     "bearing": "KB23",
+     "origin": "real",
+     "share_flagged": 0.0375,
+     "n": 80
+    },
+    {
+     "bearing": "KB24",
+     "origin": "real",
+     "share_flagged": 0.0375,
+     "n": 80
+    },
+    {
+     "bearing": "KB27",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI01",
+     "origin": "artificial",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI03",
+     "origin": "artificial",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI04",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI05",
+     "origin": "artificial",
+     "share_flagged": 0.825,
+     "n": 80
+    },
+    {
+     "bearing": "KI07",
+     "origin": "artificial",
+     "share_flagged": 0.8375,
+     "n": 80
+    },
+    {
+     "bearing": "KI08",
+     "origin": "artificial",
+     "share_flagged": 0.8375,
+     "n": 80
+    },
+    {
+     "bearing": "KI14",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI16",
+     "origin": "real",
+     "share_flagged": 0.925,
+     "n": 80
+    },
+    {
+     "bearing": "KI17",
+     "origin": "real",
+     "share_flagged": 0.925,
+     "n": 80
+    },
+    {
+     "bearing": "KI18",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI21",
+     "origin": "real",
+     "share_flagged": 0.9875,
+     "n": 80
+    }
+   ],
+   "ece": 0.1085,
+   "n_recordings": 2559,
+   "n_unusable": 1
+  },
+  "16k_10b": {
+   "forced_ba": 0.8314,
+   "ci": [
+    0.6837,
+    0.9384
+   ],
+   "false_alarm": 0.1688,
+   "miss": 0.1684,
+   "decided_share": 0.8245,
+   "decided_ba": 0.8675,
+   "decided_nothing": false,
+   "seen_ba": null,
+   "per_condition": {
+    "N09_M07_F10": 0.801,
+    "N15_M01_F10": 0.8271,
+    "N15_M07_F04": 0.8506,
+    "N15_M07_F10": 0.8471
+   },
+   "by_origin": {
+    "artificial": 0.8175,
+    "healthy": 0.1688,
+    "real": 0.8438
+   },
+   "fold_ba": {
+    "1": 0.805,
+    "2": 0.795,
+    "3": 0.5609,
+    "4": 0.9797,
+    "5": 0.9703,
+    "6": 0.9138
+   },
+   "thresholds": {
+    "1": {
+     "line": 0.7576,
+     "band": 0.1096,
+     "medium": 0.1918
+    },
+    "2": {
+     "line": 0.8599,
+     "band": 0.0828,
+     "medium": 0.1232
+    },
+    "3": {
+     "line": 0.8416,
+     "band": 0.1063,
+     "medium": 0.1478
+    },
+    "4": {
+     "line": 0.7789,
+     "band": 0.0421,
+     "medium": 0.0871
+    },
+    "5": {
+     "line": 0.786,
+     "band": 0.0334,
+     "medium": 0.0766
+    },
+    "6": {
+     "line": 0.8077,
+     "band": 0.0837,
+     "medium": 0.1431
+    }
+   },
+   "per_bearing": [
+    {
+     "bearing": "K001",
+     "origin": "healthy",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "K002",
+     "origin": "healthy",
+     "share_flagged": 0.175,
+     "n": 80
+    },
+    {
+     "bearing": "K003",
+     "origin": "healthy",
+     "share_flagged": 0.8125,
+     "n": 80
+    },
+    {
+     "bearing": "K004",
+     "origin": "healthy",
+     "share_flagged": 0.0125,
+     "n": 80
+    },
+    {
+     "bearing": "K005",
+     "origin": "healthy",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "K006",
+     "origin": "healthy",
+     "share_flagged": 0.0125,
+     "n": 80
+    },
+    {
+     "bearing": "KA01",
+     "origin": "artificial",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA03",
+     "origin": "artificial",
+     "share_flagged": 0.85,
+     "n": 80
+    },
+    {
+     "bearing": "KA04",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA05",
+     "origin": "artificial",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA06",
+     "origin": "artificial",
+     "share_flagged": 0.975,
+     "n": 80
+    },
+    {
+     "bearing": "KA07",
+     "origin": "artificial",
+     "share_flagged": 0.9125,
+     "n": 80
+    },
+    {
+     "bearing": "KA08",
+     "origin": "artificial",
+     "share_flagged": 0.7468,
+     "n": 79
+    },
+    {
+     "bearing": "KA09",
+     "origin": "artificial",
+     "share_flagged": 0.6875,
+     "n": 80
+    },
+    {
+     "bearing": "KA15",
+     "origin": "real",
+     "share_flagged": 0.975,
+     "n": 80
+    },
+    {
+     "bearing": "KA16",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA22",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KA30",
+     "origin": "real",
+     "share_flagged": 0.9875,
+     "n": 80
+    },
+    {
+     "bearing": "KB23",
+     "origin": "real",
+     "share_flagged": 0.05,
+     "n": 80
+    },
+    {
+     "bearing": "KB24",
+     "origin": "real",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "KB27",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI01",
+     "origin": "artificial",
+     "share_flagged": 0.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI03",
+     "origin": "artificial",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI04",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI05",
+     "origin": "artificial",
+     "share_flagged": 0.85,
+     "n": 80
+    },
+    {
+     "bearing": "KI07",
+     "origin": "artificial",
+     "share_flagged": 0.925,
+     "n": 80
+    },
+    {
+     "bearing": "KI08",
+     "origin": "artificial",
+     "share_flagged": 0.8625,
+     "n": 80
+    },
+    {
+     "bearing": "KI14",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI16",
+     "origin": "real",
+     "share_flagged": 0.8875,
+     "n": 80
+    },
+    {
+     "bearing": "KI17",
+     "origin": "real",
+     "share_flagged": 0.9875,
+     "n": 80
+    },
+    {
+     "bearing": "KI18",
+     "origin": "real",
+     "share_flagged": 1.0,
+     "n": 80
+    },
+    {
+     "bearing": "KI21",
+     "origin": "real",
+     "share_flagged": 0.925,
+     "n": 80
+    }
+   ],
+   "ece": 0.1104,
+   "n_recordings": 2559,
+   "n_unusable": 1
+  }
+ },
+ "new_load": {
+  "lab": {
+   "N15_M07_F10->N15_M01_F10": {
+    "forced_ba": 0.7892,
+    "ci": [
+     0.616,
+     0.9298
+    ],
+    "false_alarm": 0.225,
+    "miss": 0.1965,
+    "decided_share": 0.7825,
+    "decided_ba": 0.8405,
+    "decided_nothing": false,
+    "seen_ba": null,
+    "per_condition": {
+     "N15_M01_F10": 0.7892
+    },
+    "by_origin": {
+     "artificial": 0.8912,
+     "healthy": 0.225,
+     "real": 0.7286
+    },
+    "fold_ba": {
+     "1": 0.8,
+     "2": 0.725,
+     "3": 0.4062,
+     "4": 0.9125,
+     "5": 0.9625,
+     "6": 0.9557
+    },
+    "thresholds": {
+     "1": {
+      "line": 0.7718,
+      "band": 0.115,
+      "medium": 0.1691
+     },
+     "2": {
+      "line": 0.7609,
+      "band": 0.202,
+      "medium": 0.2349
+     },
+     "3": {
+      "line": 0.8723,
+      "band": 0.0861,
+      "medium": 0.1151
+     },
+     "4": {
+      "line": 0.8215,
+      "band": 0.0357,
+      "medium": 0.0658
+     },
+     "5": {
+      "line": 0.807,
+      "band": 0.0349,
+      "medium": 0.0606
+     },
+     "6": {
+      "line": 0.8277,
+      "band": 0.0701,
+      "medium": 0.1216
+     }
+    },
+    "per_bearing": [
+     {
+      "bearing": "K001",
+      "origin": "healthy",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "K002",
+      "origin": "healthy",
+      "share_flagged": 0.35,
+      "n": 20
+     },
+     {
+      "bearing": "K003",
+      "origin": "healthy",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "K004",
+      "origin": "healthy",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "K005",
+      "origin": "healthy",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "K006",
+      "origin": "healthy",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA01",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA03",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA04",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA05",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA06",
+      "origin": "artificial",
+      "share_flagged": 0.95,
+      "n": 20
+     },
+     {
+      "bearing": "KA07",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA08",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 19
+     },
+     {
+      "bearing": "KA09",
+      "origin": "artificial",
+      "share_flagged": 0.95,
+      "n": 20
+     },
+     {
+      "bearing": "KA15",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA16",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA22",
+      "origin": "real",
+      "share_flagged": 0.45,
+      "n": 20
+     },
+     {
+      "bearing": "KA30",
+      "origin": "real",
+      "share_flagged": 0.9,
+      "n": 20
+     },
+     {
+      "bearing": "KB23",
+      "origin": "real",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "KB24",
+      "origin": "real",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "KB27",
+      "origin": "real",
+      "share_flagged": 0.95,
+      "n": 20
+     },
+     {
+      "bearing": "KI01",
+      "origin": "artificial",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI03",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI04",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI05",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI07",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI08",
+      "origin": "artificial",
+      "share_flagged": 0.8,
+      "n": 20
+     },
+     {
+      "bearing": "KI14",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI16",
+      "origin": "real",
+      "share_flagged": 0.25,
+      "n": 20
+     },
+     {
+      "bearing": "KI17",
+      "origin": "real",
+      "share_flagged": 0.9,
+      "n": 20
+     },
+     {
+      "bearing": "KI18",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI21",
+      "origin": "real",
+      "share_flagged": 0.75,
+      "n": 20
+     }
+    ],
+    "ece": 0.173,
+    "n_recordings": 639,
+    "n_unusable": 0
+   },
+   "N15_M01_F10->N15_M07_F10": {
+    "forced_ba": 0.8346,
+    "ci": [
+     0.7176,
+     0.9343
+    ],
+    "false_alarm": 0.125,
+    "miss": 0.2058,
+    "decided_share": 0.7672,
+    "decided_ba": 0.8985,
+    "decided_nothing": false,
+    "seen_ba": null,
+    "per_condition": {
+     "N15_M07_F10": 0.8346
+    },
+    "by_origin": {
+     "artificial": 0.7708,
+     "healthy": 0.125,
+     "real": 0.8143
+    },
+    "fold_ba": {
+     "1": 0.82,
+     "2": 0.625,
+     "3": 0.9,
+     "4": 1.0,
+     "5": 1.0,
+     "6": 0.6813
+    },
+    "thresholds": {
+     "1": {
+      "line": 0.7099,
+      "band": 0.1123,
+      "medium": 0.2075
+     },
+     "2": {
+      "line": 0.8324,
+      "band": 0.0909,
+      "medium": 0.1359
+     },
+     "3": {
+      "line": 0.8277,
+      "band": 0.1182,
+      "medium": 0.1575
+     },
+     "4": {
+      "line": 0.7733,
+      "band": 0.04,
+      "medium": 0.0783
+     },
+     "5": {
+      "line": 0.7763,
+      "band": 0.0511,
+      "medium": 0.0873
+     },
+     "6": {
+      "line": 0.8983,
+      "band": 0.0399,
+      "medium": 0.0663
+     }
+    },
+    "per_bearing": [
+     {
+      "bearing": "K001",
+      "origin": "healthy",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "K002",
+      "origin": "healthy",
+      "share_flagged": 0.55,
+      "n": 20
+     },
+     {
+      "bearing": "K003",
+      "origin": "healthy",
+      "share_flagged": 0.2,
+      "n": 20
+     },
+     {
+      "bearing": "K004",
+      "origin": "healthy",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "K005",
+      "origin": "healthy",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "K006",
+      "origin": "healthy",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA01",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA03",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA04",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA05",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA06",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA07",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA08",
+      "origin": "artificial",
+      "share_flagged": 0.1,
+      "n": 20
+     },
+     {
+      "bearing": "KA09",
+      "origin": "artificial",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA15",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA16",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA22",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA30",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KB23",
+      "origin": "real",
+      "share_flagged": 0.05,
+      "n": 20
+     },
+     {
+      "bearing": "KB24",
+      "origin": "real",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "KB27",
+      "origin": "real",
+      "share_flagged": 0.85,
+      "n": 20
+     },
+     {
+      "bearing": "KI01",
+      "origin": "artificial",
+      "share_flagged": 0.15,
+      "n": 20
+     },
+     {
+      "bearing": "KI03",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI04",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI05",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI07",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI08",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI14",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI16",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI17",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI18",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI21",
+      "origin": "real",
+      "share_flagged": 0.5,
+      "n": 20
+     }
+    ],
+    "ece": 0.1196,
+    "n_recordings": 640,
+    "n_unusable": 0
+   }
+  },
+  "16k_12b": {
+   "N15_M07_F10->N15_M01_F10": {
+    "forced_ba": 0.7523,
+    "ci": [
+     0.5765,
+     0.8942
+    ],
+    "false_alarm": 0.2083,
+    "miss": 0.2871,
+    "decided_share": 0.7903,
+    "decided_ba": 0.7937,
+    "decided_nothing": false,
+    "seen_ba": null,
+    "per_condition": {
+     "N15_M01_F10": 0.7523
+    },
+    "by_origin": {
+     "artificial": 0.749,
+     "healthy": 0.2083,
+     "real": 0.6821
+    },
+    "fold_ba": {
+     "1": 0.805,
+     "2": 0.765,
+     "3": 0.4375,
+     "4": 0.925,
+     "5": 0.9688,
+     "6": 0.6139
+    },
+    "thresholds": {
+     "1": {
+      "line": 0.6918,
+      "band": 0.1627,
+      "medium": 0.2452
+     },
+     "2": {
+      "line": 0.78,
+      "band": 0.15,
+      "medium": 0.2065
+     },
+     "3": {
+      "line": 0.7653,
+      "band": 0.1818,
+      "medium": 0.2199
+     },
+     "4": {
+      "line": 0.7968,
+      "band": 0.0314,
+      "medium": 0.0612
+     },
+     "5": {
+      "line": 0.7983,
+      "band": 0.0257,
+      "medium": 0.052
+     },
+     "6": {
+      "line": 0.8735,
+      "band": 0.0325,
+      "medium": 0.0664
+     }
+    },
+    "per_bearing": [
+     {
+      "bearing": "K001",
+      "origin": "healthy",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "K002",
+      "origin": "healthy",
+      "share_flagged": 0.25,
+      "n": 20
+     },
+     {
+      "bearing": "K003",
+      "origin": "healthy",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "K004",
+      "origin": "healthy",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "K005",
+      "origin": "healthy",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "K006",
+      "origin": "healthy",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA01",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA03",
+      "origin": "artificial",
+      "share_flagged": 0.9,
+      "n": 20
+     },
+     {
+      "bearing": "KA04",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA05",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA06",
+      "origin": "artificial",
+      "share_flagged": 0.95,
+      "n": 20
+     },
+     {
+      "bearing": "KA07",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA08",
+      "origin": "artificial",
+      "share_flagged": 0.1579,
+      "n": 19
+     },
+     {
+      "bearing": "KA09",
+      "origin": "artificial",
+      "share_flagged": 0.15,
+      "n": 20
+     },
+     {
+      "bearing": "KA15",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA16",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA22",
+      "origin": "real",
+      "share_flagged": 0.5,
+      "n": 20
+     },
+     {
+      "bearing": "KA30",
+      "origin": "real",
+      "share_flagged": 0.9,
+      "n": 20
+     },
+     {
+      "bearing": "KB23",
+      "origin": "real",
+      "share_flagged": 0.05,
+      "n": 20
+     },
+     {
+      "bearing": "KB24",
+      "origin": "real",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "KB27",
+      "origin": "real",
+      "share_flagged": 0.6,
+      "n": 20
+     },
+     {
+      "bearing": "KI01",
+      "origin": "artificial",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI03",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI04",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI05",
+      "origin": "artificial",
+      "share_flagged": 0.95,
+      "n": 20
+     },
+     {
+      "bearing": "KI07",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI08",
+      "origin": "artificial",
+      "share_flagged": 0.85,
+      "n": 20
+     },
+     {
+      "bearing": "KI14",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI16",
+      "origin": "real",
+      "share_flagged": 0.55,
+      "n": 20
+     },
+     {
+      "bearing": "KI17",
+      "origin": "real",
+      "share_flagged": 0.95,
+      "n": 20
+     },
+     {
+      "bearing": "KI18",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI21",
+      "origin": "real",
+      "share_flagged": 0.0,
+      "n": 20
+     }
+    ],
+    "ece": 0.1723,
+    "n_recordings": 639,
+    "n_unusable": 0
+   },
+   "N15_M01_F10->N15_M07_F10": {
+    "forced_ba": 0.7663,
+    "ci": [
+     0.6375,
+     0.8712
+    ],
+    "false_alarm": 0.125,
+    "miss": 0.3423,
+    "decided_share": 0.7,
+    "decided_ba": 0.8446,
+    "decided_nothing": false,
+    "seen_ba": null,
+    "per_condition": {
+     "N15_M07_F10": 0.7663
+    },
+    "by_origin": {
+     "artificial": 0.575,
+     "healthy": 0.125,
+     "real": 0.7286
+    },
+    "fold_ba": {
+     "1": 0.8,
+     "2": 0.785,
+     "3": 0.6938,
+     "4": 0.7937,
+     "5": 0.7625,
+     "6": 0.7625
+    },
+    "thresholds": {
+     "1": {
+      "line": 0.7294,
+      "band": 0.12,
+      "medium": 0.2081
+     },
+     "2": {
+      "line": 0.8593,
+      "band": 0.0645,
+      "medium": 0.1132
+     },
+     "3": {
+      "line": 0.7952,
+      "band": 0.1279,
+      "medium": 0.1894
+     },
+     "4": {
+      "line": 0.818,
+      "band": 0.0249,
+      "medium": 0.0596
+     },
+     "5": {
+      "line": 0.8205,
+      "band": 0.024,
+      "medium": 0.0483
+     },
+     "6": {
+      "line": 0.8594,
+      "band": 0.0753,
+      "medium": 0.1066
+     }
+    },
+    "per_bearing": [
+     {
+      "bearing": "K001",
+      "origin": "healthy",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "K002",
+      "origin": "healthy",
+      "share_flagged": 0.15,
+      "n": 20
+     },
+     {
+      "bearing": "K003",
+      "origin": "healthy",
+      "share_flagged": 0.6,
+      "n": 20
+     },
+     {
+      "bearing": "K004",
+      "origin": "healthy",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "K005",
+      "origin": "healthy",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "K006",
+      "origin": "healthy",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA01",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA03",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA04",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA05",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA06",
+      "origin": "artificial",
+      "share_flagged": 0.05,
+      "n": 20
+     },
+     {
+      "bearing": "KA07",
+      "origin": "artificial",
+      "share_flagged": 0.1,
+      "n": 20
+     },
+     {
+      "bearing": "KA08",
+      "origin": "artificial",
+      "share_flagged": 0.15,
+      "n": 20
+     },
+     {
+      "bearing": "KA09",
+      "origin": "artificial",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA15",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA16",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KA22",
+      "origin": "real",
+      "share_flagged": 0.45,
+      "n": 20
+     },
+     {
+      "bearing": "KA30",
+      "origin": "real",
+      "share_flagged": 0.9,
+      "n": 20
+     },
+     {
+      "bearing": "KB23",
+      "origin": "real",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "KB24",
+      "origin": "real",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "KB27",
+      "origin": "real",
+      "share_flagged": 0.95,
+      "n": 20
+     },
+     {
+      "bearing": "KI01",
+      "origin": "artificial",
+      "share_flagged": 0.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI03",
+      "origin": "artificial",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI04",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI05",
+      "origin": "artificial",
+      "share_flagged": 0.95,
+      "n": 20
+     },
+     {
+      "bearing": "KI07",
+      "origin": "artificial",
+      "share_flagged": 0.85,
+      "n": 20
+     },
+     {
+      "bearing": "KI08",
+      "origin": "artificial",
+      "share_flagged": 0.8,
+      "n": 20
+     },
+     {
+      "bearing": "KI14",
+      "origin": "real",
+      "share_flagged": 0.6,
+      "n": 20
+     },
+     {
+      "bearing": "KI16",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI17",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     },
+     {
+      "bearing": "KI18",
+      "origin": "real",
+      "share_flagged": 0.3,
+      "n": 20
+     },
+     {
+      "bearing": "KI21",
+      "origin": "real",
+      "share_flagged": 1.0,
+      "n": 20
+     }
+    ],
+    "ece": 0.0926,
+    "n_recordings": 640,
+    "n_unusable": 0
+   }
+  }
+ },
+ "candidates": {
+  "lab": {
+   "shape+rf": {
+    "same_load": 0.8152,
+    "ci": [
+     0.6793,
+     0.9218
+    ],
+    "new_load": {
+     "N15_M07_F10->N15_M01_F10": 0.5125,
+     "N15_M01_F10->N15_M07_F10": 0.5
+    }
+   },
+   "shape_own+rf": {
+    "same_load": 0.7681,
+    "ci": [
+     0.6036,
+     0.911
+    ],
+    "new_load": {
+     "N15_M07_F10->N15_M01_F10": 0.286,
+     "N15_M01_F10->N15_M07_F10": 0.301
+    }
+   },
+   "shape_fleet+rf": {
+    "same_load": 0.8307,
+    "ci": [
+     0.6874,
+     0.9361
+    ],
+    "new_load": {
+     "N15_M07_F10->N15_M01_F10": 0.7892,
+     "N15_M01_F10->N15_M07_F10": 0.8346
+    }
+   },
+   "all_fleet+rf": {
+    "same_load": 0.8182,
+    "ci": [
+     0.6774,
+     0.9396
+    ],
+    "new_load": {
+     "N15_M07_F10->N15_M01_F10": 0.7722,
+     "N15_M01_F10->N15_M07_F10": 0.7946
+    }
+   },
+   "low_fleet+rf": {
+    "same_load": 0.618,
+    "ci": [
+     0.4666,
+     0.7576
+    ],
+    "new_load": {
+     "N15_M07_F10->N15_M01_F10": 0.458,
+     "N15_M01_F10->N15_M07_F10": 0.567
+    }
+   }
+  },
+  "32k_12b": {
+   "shape+rf": {
+    "same_load": 0.8213,
+    "ci": [
+     0.6981,
+     0.9214
+    ]
+   },
+   "shape_own+rf": {
+    "same_load": 0.7629,
+    "ci": [
+     0.6017,
+     0.9092
+    ]
+   },
+   "shape_fleet+rf": {
+    "same_load": 0.8205,
+    "ci": [
+     0.6791,
+     0.9365
+    ]
+   },
+   "all_fleet+rf": {
+    "same_load": 0.8288,
+    "ci": [
+     0.6872,
+     0.9389
+    ]
+   },
+   "low_fleet+rf": {
+    "same_load": 0.594,
+    "ci": [
+     0.4516,
+     0.7394
+    ]
+   }
+  },
+  "16k_12b": {
+   "shape+rf": {
+    "same_load": 0.7978,
+    "ci": [
+     0.6422,
+     0.9177
+    ],
+    "new_load": {
+     "N15_M07_F10->N15_M01_F10": 0.5,
+     "N15_M01_F10->N15_M07_F10": 0.5
+    }
+   },
+   "shape_own+rf": {
+    "same_load": 0.7255,
+    "ci": [
+     0.5512,
+     0.882
+    ],
+    "new_load": {
+     "N15_M07_F10->N15_M01_F10": 0.4164,
+     "N15_M01_F10->N15_M07_F10": 0.4423
+    }
+   },
+   "shape_fleet+rf": {
+    "same_load": 0.8194,
+    "ci": [
+     0.6622,
+     0.9408
+    ],
+    "new_load": {
+     "N15_M07_F10->N15_M01_F10": 0.7523,
+     "N15_M01_F10->N15_M07_F10": 0.7663
+    }
+   },
+   "all_fleet+rf": {
+    "same_load": 0.815,
+    "ci": [
+     0.6616,
+     0.9346
+    ],
+    "new_load": {
+     "N15_M07_F10->N15_M01_F10": 0.7895,
+     "N15_M01_F10->N15_M07_F10": 0.7583
+    }
+   },
+   "low_fleet+rf": {
+    "same_load": 0.5427,
+    "ci": [
+     0.4246,
+     0.6687
+    ],
+    "new_load": {
+     "N15_M07_F10->N15_M01_F10": 0.4625,
+     "N15_M01_F10->N15_M07_F10": 0.5545
+    }
+   }
+  },
+  "8k_12b": {
+   "shape+rf": {
+    "same_load": 0.7517,
+    "ci": [
+     0.5822,
+     0.8965
+    ]
+   },
+   "shape_own+rf": {
+    "same_load": 0.6859,
+    "ci": [
+     0.5485,
+     0.8255
+    ]
+   },
+   "shape_fleet+rf": {
+    "same_load": 0.7241,
+    "ci": [
+     0.5398,
+     0.8938
+    ]
+   },
+   "all_fleet+rf": {
+    "same_load": 0.7281,
+    "ci": [
+     0.5436,
+     0.8977
+    ]
+   },
+   "low_fleet+rf": {
+    "same_load": 0.5311,
+    "ci": [
+     0.4188,
+     0.6515
+    ]
+   }
+  },
+  "16k_10b": {
+   "shape+rf": {
+    "same_load": 0.8025,
+    "ci": [
+     0.6575,
+     0.9146
+    ]
+   },
+   "shape_own+rf": {
+    "same_load": 0.7274,
+    "ci": [
+     0.5758,
+     0.8681
+    ]
+   },
+   "shape_fleet+rf": {
+    "same_load": 0.8314,
+    "ci": [
+     0.6837,
+     0.9384
+    ]
+   },
+   "all_fleet+rf": {
+    "same_load": 0.8233,
+    "ci": [
+     0.6672,
+     0.936
+    ]
+   },
+   "low_fleet+rf": {
+    "same_load": 0.5113,
+    "ci": [
+     0.4005,
+     0.6385
+    ]
+   }
+  }
+ },
+ "seen_ba": {
+  "lab": 0.9518,
+  "16k_12b": 0.9352
+ },
+ "by_level": {
+  "lab": {
+   "1": {
+    "share_flagged": 0.895,
+    "n_bearings": 15
+   },
+   "2": {
+    "share_flagged": 0.7719,
+    "n_bearings": 9
+   },
+   "3": {
+    "share_flagged": 0.4437,
+    "n_bearings": 2
+   }
+  },
+  "32k_12b": {
+   "1": {
+    "share_flagged": 0.9058,
+    "n_bearings": 15
+   },
+   "2": {
+    "share_flagged": 0.7816,
+    "n_bearings": 9
+   },
+   "3": {
+    "share_flagged": 0.4313,
+    "n_bearings": 2
+   }
+  },
+  "16k_12b": {
+   "1": {
+    "share_flagged": 0.915,
+    "n_bearings": 15
+   },
+   "2": {
+    "share_flagged": 0.8164,
+    "n_bearings": 9
+   },
+   "3": {
+    "share_flagged": 0.45,
+    "n_bearings": 2
+   }
+  },
+  "8k_12b": {
+   "1": {
+    "share_flagged": 0.8633,
+    "n_bearings": 15
+   },
+   "2": {
+    "share_flagged": 0.6092,
+    "n_bearings": 9
+   },
+   "3": {
+    "share_flagged": 0.4813,
+    "n_bearings": 2
+   }
+  },
+  "16k_10b": {
+   "1": {
+    "share_flagged": 0.9092,
+    "n_bearings": 15
+   },
+   "2": {
+    "share_flagged": 0.7886,
+    "n_bearings": 9
+   },
+   "3": {
+    "share_flagged": 0.4437,
+    "n_bearings": 2
+   }
+  }
+ },
+ "ring": {
+  "lab": {
+   "ba": 0.6093,
+   "ci": [
+    0.4531,
+    0.7653
+   ],
+   "n_bearings": 23,
+   "n_recordings": 1839
+  },
+  "16k_12b": {
+   "ba": 0.6204,
+   "ci": [
+    0.4547,
+    0.7734
+   ],
+   "n_bearings": 23,
+   "n_recordings": 1839
+  }
+ },
+ "authors_split": {
+  "lab": {
+   "shape_fleet": {
+    "accuracy": 0.3625,
+    "balanced_3class": 0.2658,
+    "recall_per_class": {
+     "healthy": 0.0,
+     "inner": 0.1975,
+     "outer": 0.6
+    },
+    "n_test_recordings": 880
+   },
+   "all_fleet": {
+    "accuracy": 0.3625,
+    "balanced_3class": 0.2658,
+    "recall_per_class": {
+     "healthy": 0.0,
+     "inner": 0.1975,
+     "outer": 0.6
+    },
+    "n_test_recordings": 880
+   }
+  },
+  "16k_12b": {
+   "shape_fleet": {
+    "accuracy": 0.3659,
+    "balanced_3class": 0.275,
+    "recall_per_class": {
+     "healthy": 0.025,
+     "inner": 0.2,
+     "outer": 0.6
+    },
+    "n_test_recordings": 880
+   },
+   "all_fleet": {
+    "accuracy": 0.3682,
+    "balanced_3class": 0.2833,
+    "recall_per_class": {
+     "healthy": 0.05,
+     "inner": 0.2,
+     "outer": 0.6
+    },
+    "n_test_recordings": 880
+   }
+  }
+ },
+ "plant_switched": true,
+ "ring_shown": false,
+ "plant": {
+  "catch_rate": 0.7308,
+  "false_alarm_rate": 0.0,
+  "handoff_healthy": 0.3333,
+  "handoff_damaged": 0.1154,
+  "n_healthy": 6,
+  "n_damaged": 26,
+  "ece": 0.1119,
+  "percent_ok": false
+ }
+}

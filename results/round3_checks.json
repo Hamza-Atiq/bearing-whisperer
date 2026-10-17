@@ -1,0 +1,182 @@
+{
+ "note": "Exploratory checks run AFTER round 3, not sealed. Lab quality, same groups, line and band rules as round 3. Derived from the Paderborn data (CC BY-NC 4.0).",
+ "tones_fleet+rf": [
+  0.4455,
+  [
+   0.3663,
+   0.5108
+  ]
+ ],
+ "low_bands_1k_fleet+rf": [
+  0.5692,
+  [
+   0.4301,
+   0.7305
+  ]
+ ],
+ "mid_bands_1k_4.5k_fleet+rf": [
+  0.7958,
+  [
+   0.6378,
+   0.93
+  ]
+ ],
+ "high_bands_4.5k_fleet+rf": [
+  0.8269,
+  [
+   0.6926,
+   0.9295
+  ]
+ ],
+ "shape_fleet+rf_real": [
+  0.8307,
+  [
+   0.6874,
+   0.9361
+  ]
+ ],
+ "runin_flagged": {
+  "K001": 0.0,
+  "K002": 0.175,
+  "K003": 0.7625,
+  "K004": 0.0,
+  "K005": 0.0,
+  "K006": 0.0
+ },
+ "runin_hours": {
+  "K001": ">50",
+  "K002": "19",
+  "K003": "1",
+  "K004": "5",
+  "K005": "10",
+  "K006": "16"
+ },
+ "null": [
+  {
+   "fake_healthy": [
+    "K006",
+    "KA06",
+    "KA07",
+    "KA15",
+    "KB23",
+    "KI05"
+   ],
+   "real_healthy_among_them": 1,
+   "ba": 0.3887
+  },
+  {
+   "fake_healthy": [
+    "K001",
+    "K002",
+    "K003",
+    "KA30",
+    "KB27",
+    "KI17"
+   ],
+   "real_healthy_among_them": 3,
+   "ba": 0.4914
+  },
+  {
+   "fake_healthy": [
+    "KA04",
+    "KA09",
+    "KA15",
+    "KA22",
+    "KA30",
+    "KI16"
+   ],
+   "real_healthy_among_them": 0,
+   "ba": 0.3278
+  },
+  {
+   "fake_healthy": [
+    "K006",
+    "KA04",
+    "KA05",
+    "KA30",
+    "KB24",
+    "KI17"
+   ],
+   "real_healthy_among_them": 1,
+   "ba": 0.6109
+  },
+  {
+   "fake_healthy": [
+    "K004",
+    "KA30",
+    "KB24",
+    "KI01",
+    "KI05",
+    "KI21"
+   ],
+   "real_healthy_among_them": 1,
+   "ba": 0.43
+  },
+  {
+   "fake_healthy": [
+    "K003",
+    "K005",
+    "KA03",
+    "KA09",
+    "KB23",
+    "KI17"
+   ],
+   "real_healthy_among_them": 2,
+   "ba": 0.3911
+  },
+  {
+   "fake_healthy": [
+    "K001",
+    "K006",
+    "KA03",
+    "KI05",
+    "KI07",
+    "KI08"
+   ],
+   "real_healthy_among_them": 2,
+   "ba": 0.8398
+  },
+  {
+   "fake_healthy": [
+    "K001",
+    "K002",
+    "K003",
+    "KA22",
+    "KI08",
+    "KI21"
+   ],
+   "real_healthy_among_them": 3,
+   "ba": 0.5787
+  },
+  {
+   "fake_healthy": [
+    "KA01",
+    "KA06",
+    "KA15",
+    "KA16",
+    "KB27",
+    "KI08"
+   ],
+   "real_healthy_among_them": 0,
+   "ba": 0.3596
+  },
+  {
+   "fake_healthy": [
+    "KA05",
+    "KA22",
+    "KB24",
+    "KI04",
+    "KI18",
+    "KI21"
+   ],
+   "real_healthy_among_them": 0,
+   "ba": 0.4533
+  }
+ ],
+ "null_summary": {
+  "n": 10,
+  "mean": 0.4871,
+  "max": 0.8398,
+  "share_at_or_above_real": 0.1
+ }
+}

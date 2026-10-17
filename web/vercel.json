@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/*.py": { "includeFiles": "api/_*/**", "maxDuration": 60 }
+  }
+}

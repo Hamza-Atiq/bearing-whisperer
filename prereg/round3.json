@@ -1,0 +1,48 @@
+{
+  "written": "2026-10-17",
+  "spec_version": "v11",
+  "why": "Round 2 (shape+rf) scored 0.82 on unseen bearings but about 0.51 when trained at one load and tested at another. A drive knows its load setting and how its other motors sound at that load, without knowing which are damaged. Round 3 compares each recording with the fleet at the same condition, so a load change should cancel out.",
+  "round1_fingerprint": "383402e7d27e20edc020ccb39160393b587bca00d18fd59b30eb2925d394173e",
+  "round2_fingerprint": "c3f518734dac9dd3832994e9f44764702d43107f11f3ecffd3d14598b3d70222",
+  "detector": "shape_fleet+rf",
+  "fleet_normal": "for each condition and each feature: (x - median) / (IQR + 1e-6), median and IQR over the usable recordings of the reference bearings at that condition, without labels. Reference bearings = the training bearings of the fold (inner folds: the inner training bearings). Setting columns stay raw.",
+  "candidates_reported_not_chosen": [
+    {"name": "shape+rf", "features": ["band_"], "normal": "none"},
+    {"name": "shape_own+rf", "features": ["band_"], "normal": "own"},
+    {"name": "shape_fleet+rf", "features": ["band_"], "normal": "fleet"},
+    {"name": "all_fleet+rf", "features": ["band_", "contrast_", "click_"], "normal": "fleet"},
+    {"name": "low_fleet+rf", "features": ["band_below_1k", "contrast_"], "normal": "fleet"}
+  ],
+  "own_normal": "each recording's band levels minus that recording's mean band level",
+  "model": "RandomForestClassifier(n_estimators=300, min_samples_leaf=10, max_features='sqrt', class_weight='balanced_subsample', random_state=0), as round 2",
+  "setting_columns_always_added": ["rpm", "torque"],
+  "same_load_test": "as round 2: round-1 folds, all four conditions mixed, inner out-of-fold scores on the 5 training groups set the calibration, line and band; one outer pass",
+  "new_load_test": "for N15_M07_F10 -> N15_M01_F10 and the reverse: labels from training bearings at the training load only; the fleet normal at the test load uses training bearings' recordings at the test load without labels; calibration, line and band from inner out-of-fold scores at the training load; test bearings at the test load scored once",
+  "settings_same_load": ["lab", "32k_12b", "16k_12b", "8k_12b", "16k_10b"],
+  "settings_new_load": ["lab", "16k_12b"],
+  "seen_bearings_number": "the same detector with recordings split at random (5 folds, seed 0), fleet normal from all bearings, reported as inflated",
+  "plant_switch": "the plant view uses round 3 at 16k_12b only if the lower end of the 95% range is above 0.5 for the same-load test AND for both new-load directions at 16k_12b; otherwise it stays on round 2",
+  "ring_fr003": {
+    "task": "outer ring (KA*) vs inner ring (KI*), damaged bearings only; KB23 KB24 KB27 (both rings, Lessmeier Table 5) never used to train or score",
+    "features": "all_fleet (band_, contrast_, click_ with the fleet normal)",
+    "model": "same forest, class_weight balanced_subsample",
+    "test": "same outer folds; trained on the fold's KA/KI training bearings; scored per recording as balanced accuracy outer vs inner; 95% range by resampling bearings",
+    "show_rule": "the product names a ring only if, at 16k_12b, the lower end of the ring score's 95% range is above 0.5; then a check-bearing motor shows 'outer ring likely' if its median outer-ring estimate is 0.65 or more, 'inner ring likely' if 0.35 or less, else 'cannot tell'. If the rule fails, every motor shows 'which ring: cannot tell'."
+  },
+  "damage_size_fr014": "from the round-3 same-load predictions at lab and 16k_12b: share of recordings flagged per damage level (Lessmeier Tables 4 and 5: level 1 = 15 bearings, level 2 = 9, level 3 = 2), with bearing counts; and per motor in the plant view",
+  "damage_levels": {"KA01": 1, "KA03": 2, "KA05": 1, "KA06": 2, "KA07": 1, "KA08": 2, "KA09": 2,
+                    "KI01": 1, "KI03": 1, "KI05": 1, "KI07": 2, "KI08": 2,
+                    "KA04": 1, "KA15": 1, "KA16": 2, "KA22": 1, "KA30": 1, "KB23": 2, "KB24": 3, "KB27": 1,
+                    "KI04": 1, "KI14": 1, "KI16": 3, "KI17": 1, "KI18": 2, "KI21": 1},
+  "authors_split_fr020": {
+    "train": {"healthy": ["K002"], "outer": ["KA01", "KA05", "KA07"], "inner": ["KI01", "KI05", "KI07"]},
+    "test": {"healthy": ["K001"], "outer": ["KA04", "KA15", "KA16", "KA22", "KA30"], "inner": ["KI14", "KI16", "KI17", "KI18", "KI21"]},
+    "task": "3 classes, same forest, all four conditions, fleet normal from the training bearings only",
+    "feature_sets": ["shape_fleet", "all_fleet"],
+    "settings": ["lab", "16k_12b"],
+    "metrics": "plain accuracy per recording (their Table 9 metric) and balanced 3-class accuracy; both feature sets reported, none chosen",
+    "compare_with": "Lessmeier 2016 Table 9, motor current: 26.8% to 60.9%, ensemble 45.9%; guessing 33.3%"
+  },
+  "same_as_round1": ["folds", "line rule", "handoff_share", "medium_upto_share", "urgency", "plant condition, combine and min_recordings", "bootstrap", "flag_gap_ba"],
+  "reported": "all three rounds; every candidate's own score at every setting; round 1 stays the result sealed first"
+}

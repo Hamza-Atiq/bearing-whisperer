@@ -7,7 +7,7 @@ __pycache__/
 .pytest_cache/
 
 # data derived from the CC BY-NC dataset: never re-hosted (only results/ is published)
-data/
+/data/
 
 # private working documents (not part of the code)
 CLAUDE.md
@@ -16,3 +16,9 @@ research/
 specs/
 plans/
 assets/
+
+# web app build output
+web/node_modules/
+web/dist/
+.vercel/
+web/.vercel/
