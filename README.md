@@ -105,6 +105,20 @@ round stays reported, including the ones that failed.
 - **Proof:** every round, every honest check, the failures included, as charts.
 - **Value:** an illustrative yearly value you can change with sliders (assumptions are labelled as such).
 
+## How it fits together
+
+```mermaid
+flowchart LR
+    A["Paderborn motor current<br/>(64 kHz lab recordings)"] -->|Kaggle: download, read, delete| B["Features<br/>32 pitch slices of the hiss"]
+    B --> C["Detector (round 4, sealed)<br/>fleet compare + random forest, CPU only"]
+    C -->|results/ -> app.json| D["Web app on Vercel<br/>Plant, Motor, Proof, Value"]
+    D -->|"/api/note, /api/ask,<br/>/api/plan, /api/explain"| E["Python functions<br/>(AMD_KEY in server env only)"]
+    E -->|chat, tool calls, image| F["AMD Token Factory<br/>Gemma-4-31B-IT on AMD GPUs<br/>(Qwen3.8-27B backup)"]
+    F --> G{"Fact check in code<br/>numbers, verdict, motors, time"}
+    G -->|passes| D
+    G -->|fails, slow or down| H["Template or rule answer<br/>(page says so)"] --> D
+```
+
 ## What runs on AMD, and how it is kept honest
 
 All the language and vision work runs on open models served on AMD GPUs through AMD Token Factory (Gemma-4-31B-IT,
@@ -127,6 +141,7 @@ declined; 29 of 30 were right when read by Claude. A person's read is pending.
 ```bash
 py -3.12 -m venv .venv
 .venv/Scripts/python -m pip install -r requirements.txt
+cp .env.example .env                              # then put your AMD Token Factory key in .env
 .venv/Scripts/python -m pytest -q                 # tests
 .venv/Scripts/python -m bearing.export_web        # results/ -> web/public/data/app.json (needs data/ features)
 .venv/Scripts/python -m bearing.sync_web          # copies the tested assistant code into web/api/_bearing
