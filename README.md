@@ -7,7 +7,7 @@
 **Hear a failing bearing in the motor current a drive already measures.**
 Tested honestly on bearings it never saw. Explained by Gemma on AMD.
 
-[**▶ Open the live app**](https://bearing-whisperer.vercel.app/) · [**Watch the demo**](docs/demo.mp4) · [**Slides (PDF)**](docs/slides.pdf)
+[**▶ Open the live app**](https://bearing-whisperer.vercel.app/) · [**Watch the demo**](https://bearing-whisperer.vercel.app/demo.mp4) · [**Slides (PDF)**](docs/slides.pdf)
 
 AMD Developer Hackathon ACT III · Track 1 "Intelligent Industry" · AMD Token Factory · Gemma-4-31B-IT · Qwen3.8-27B
 
@@ -17,7 +17,7 @@ AMD Developer Hackathon ACT III · Track 1 "Intelligent Industry" · AMD Token F
 
 ## Watch the 3-minute demo
 
-<a href="docs/demo.mp4"><img src="docs/video-thumb.png" alt="Watch the 3-minute demo" width="820"></a>
+<a href="https://bearing-whisperer.vercel.app/demo.mp4"><img src="docs/video-thumb.png" alt="Watch the 3-minute demo" width="820"></a>
 
 ## The problem: I saw it at a fertilizer plant
 
