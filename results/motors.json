@@ -8,10 +8,10 @@
   "verdict": "damaged",
   "plant_word": "check bearing",
   "how_sure": "high",
-  "line": 0.7785,
-  "band": 0.0958,
+  "line": 0.7801,
+  "band": 0.1001,
   "medium": 0.1703,
-  "p_median": 0.9667,
+  "p_median": 0.9721,
   "n_recordings": 20,
   "evidence": [
    "more electrical buzz between 4,515 and 5,765 Hz than the average motor in training",
@@ -19,7 +19,7 @@
   ],
   "urgency": "this week",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -31,18 +31,18 @@
   "verdict": "damaged",
   "plant_word": "check bearing",
   "how_sure": "medium",
-  "line": 0.8026,
-  "band": 0.0882,
-  "medium": 0.1442,
-  "p_median": 0.9263,
+  "line": 0.7825,
+  "band": 0.0954,
+  "medium": 0.1616,
+  "p_median": 0.919,
   "n_recordings": 20,
   "evidence": [
    "less electrical buzz between 115 and 147 Hz than the average motor in training",
-   "less electrical buzz between 188 and 240 Hz than the average motor in training"
+   "more electrical buzz between 240 and 307 Hz than the average motor in training"
   ],
   "urgency": "next routine visit, with a manual check",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -54,10 +54,10 @@
   "verdict": "healthy",
   "plant_word": "healthy",
   "how_sure": "high",
-  "line": 0.7785,
-  "band": 0.0958,
+  "line": 0.7801,
+  "band": 0.1001,
   "medium": 0.1703,
-  "p_median": 0.4793,
+  "p_median": 0.4996,
   "n_recordings": 20,
   "evidence": [
    "more electrical buzz between 71 and 90 Hz than the average motor in training",
@@ -65,7 +65,7 @@
   ],
   "urgency": null,
   "ring": null,
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -77,10 +77,10 @@
   "verdict": "damaged",
   "plant_word": "check bearing",
   "how_sure": "medium",
-  "line": 0.7822,
-  "band": 0.0363,
-  "medium": 0.0715,
-  "p_median": 0.8364,
+  "line": 0.787,
+  "band": 0.032,
+  "medium": 0.0703,
+  "p_median": 0.8422,
   "n_recordings": 20,
   "evidence": [
    "more electrical buzz between 4,515 and 5,765 Hz than the average motor in training",
@@ -88,7 +88,7 @@
   ],
   "urgency": "next routine visit, with a manual check",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -100,18 +100,18 @@
   "verdict": "healthy",
   "plant_word": "healthy",
   "how_sure": "high",
-  "line": 0.8026,
-  "band": 0.0882,
-  "medium": 0.1442,
-  "p_median": 0.6027,
+  "line": 0.7825,
+  "band": 0.0954,
+  "medium": 0.1616,
+  "p_median": 0.6041,
   "n_recordings": 20,
   "evidence": [
    "less electrical buzz between 3,536 and 4,515 Hz than the average motor in training",
-   "less electrical buzz between 1,698 and 2,168 Hz than the average motor in training"
+   "less electrical buzz between 4,515 and 5,765 Hz than the average motor in training"
   ],
   "urgency": null,
   "ring": null,
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -123,10 +123,10 @@
   "verdict": "damaged",
   "plant_word": "check bearing",
   "how_sure": "high",
-  "line": 0.7822,
-  "band": 0.0363,
-  "medium": 0.0715,
-  "p_median": 0.8707,
+  "line": 0.787,
+  "band": 0.032,
+  "medium": 0.0703,
+  "p_median": 0.8691,
   "n_recordings": 20,
   "evidence": [
    "more electrical buzz between 4,515 and 5,765 Hz than the average motor in training",
@@ -134,7 +134,7 @@
   ],
   "urgency": "this week",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -146,18 +146,18 @@
   "verdict": "needs a person",
   "plant_word": "ask a person",
   "how_sure": "low",
-  "line": 0.8026,
-  "band": 0.0882,
-  "medium": 0.1442,
-  "p_median": 0.8632,
+  "line": 0.7825,
+  "band": 0.0954,
+  "medium": 0.1616,
+  "p_median": 0.8516,
   "n_recordings": 20,
   "evidence": [
    "less electrical buzz between 4,515 and 5,765 Hz than the average motor in training",
-   "less electrical buzz between 3,536 and 4,515 Hz than the average motor in training"
+   "less electrical buzz between 1,698 and 2,168 Hz than the average motor in training"
   ],
   "urgency": "next routine visit, with a manual check",
   "ring": null,
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -169,10 +169,10 @@
   "verdict": "damaged",
   "plant_word": "check bearing",
   "how_sure": "high",
-  "line": 0.7785,
-  "band": 0.0958,
+  "line": 0.7801,
+  "band": 0.1001,
   "medium": 0.1703,
-  "p_median": 0.9701,
+  "p_median": 0.9754,
   "n_recordings": 20,
   "evidence": [
    "more electrical buzz between 3,536 and 4,515 Hz than the average motor in training",
@@ -180,7 +180,7 @@
   ],
   "urgency": "this week",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -191,19 +191,19 @@
   "fold": "5",
   "verdict": "damaged",
   "plant_word": "check bearing",
-  "how_sure": "medium",
-  "line": 0.7791,
-  "band": 0.0406,
-  "medium": 0.0854,
-  "p_median": 0.8624,
+  "how_sure": "high",
+  "line": 0.7848,
+  "band": 0.0373,
+  "medium": 0.0792,
+  "p_median": 0.8716,
   "n_recordings": 20,
   "evidence": [
    "more electrical buzz between 4,515 and 5,765 Hz than the average motor in training",
    "more electrical buzz between 1,698 and 2,168 Hz than the average motor in training"
   ],
-  "urgency": "next routine visit, with a manual check",
+  "urgency": "this week",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -215,18 +215,18 @@
   "verdict": "needs a person",
   "plant_word": "ask a person",
   "how_sure": "low",
-  "line": 0.8186,
-  "band": 0.1244,
-  "medium": 0.1691,
-  "p_median": 0.9067,
+  "line": 0.8235,
+  "band": 0.122,
+  "medium": 0.1646,
+  "p_median": 0.8911,
   "n_recordings": 20,
   "evidence": [
-   "more electrical buzz between 4,515 and 5,765 Hz than the average motor in training",
-   "more electrical buzz between 1,698 and 2,168 Hz than the average motor in training"
+   "more electrical buzz between 1,698 and 2,168 Hz than the average motor in training",
+   "more electrical buzz between 4,515 and 5,765 Hz than the average motor in training"
   ],
   "urgency": "next routine visit, with a manual check",
   "ring": null,
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -238,10 +238,10 @@
   "verdict": "damaged",
   "plant_word": "check bearing",
   "how_sure": "high",
-  "line": 0.8086,
-  "band": 0.1173,
-  "medium": 0.1738,
-  "p_median": 0.9848,
+  "line": 0.8198,
+  "band": 0.1109,
+  "medium": 0.1637,
+  "p_median": 0.9847,
   "n_recordings": 20,
   "evidence": [
    "more electrical buzz between 4,515 and 5,765 Hz than the average motor in training",
@@ -249,7 +249,7 @@
   ],
   "urgency": "this week",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -261,10 +261,10 @@
   "verdict": "healthy",
   "plant_word": "healthy",
   "how_sure": "high",
-  "line": 0.8026,
-  "band": 0.0882,
-  "medium": 0.1442,
-  "p_median": 0.5061,
+  "line": 0.7825,
+  "band": 0.0954,
+  "medium": 0.1616,
+  "p_median": 0.4622,
   "n_recordings": 20,
   "evidence": [
    "less electrical buzz between 638 and 815 Hz than the average motor in training",
@@ -272,7 +272,7 @@
   ],
   "urgency": null,
   "ring": null,
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -284,10 +284,10 @@
   "verdict": "healthy",
   "plant_word": "healthy",
   "how_sure": "high",
-  "line": 0.7785,
-  "band": 0.0958,
+  "line": 0.7801,
+  "band": 0.1001,
   "medium": 0.1703,
-  "p_median": 0.3473,
+  "p_median": 0.3422,
   "n_recordings": 20,
   "evidence": [
    "more electrical buzz between 188 and 240 Hz than the average motor in training",
@@ -295,7 +295,7 @@
   ],
   "urgency": null,
   "ring": null,
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -307,10 +307,10 @@
   "verdict": "needs a person",
   "plant_word": "ask a person",
   "how_sure": "low",
-  "line": 0.8086,
-  "band": 0.1173,
-  "medium": 0.1738,
-  "p_median": 0.7533,
+  "line": 0.8198,
+  "band": 0.1109,
+  "medium": 0.1637,
+  "p_median": 0.7564,
   "n_recordings": 20,
   "evidence": [
    "more electrical buzz between 4,515 and 5,765 Hz than the average motor in training",
@@ -318,7 +318,7 @@
   ],
   "urgency": "next routine visit, with a manual check",
   "ring": null,
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -329,19 +329,19 @@
   "fold": "6",
   "verdict": "damaged",
   "plant_word": "check bearing",
-  "how_sure": "high",
-  "line": 0.8026,
-  "band": 0.0882,
-  "medium": 0.1442,
-  "p_median": 0.9542,
+  "how_sure": "medium",
+  "line": 0.7825,
+  "band": 0.0954,
+  "medium": 0.1616,
+  "p_median": 0.9357,
   "n_recordings": 20,
   "evidence": [
-   "less electrical buzz between 115 and 147 Hz than the average motor in training",
-   "less electrical buzz between 71 and 90 Hz than the average motor in training"
+   "more electrical buzz between 3,536 and 4,515 Hz than the average motor in training",
+   "less electrical buzz between 115 and 147 Hz than the average motor in training"
   ],
-  "urgency": "this week",
+  "urgency": "next routine visit, with a manual check",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -353,10 +353,10 @@
   "verdict": "damaged",
   "plant_word": "check bearing",
   "how_sure": "high",
-  "line": 0.7791,
-  "band": 0.0406,
-  "medium": 0.0854,
-  "p_median": 0.904,
+  "line": 0.7848,
+  "band": 0.0373,
+  "medium": 0.0792,
+  "p_median": 0.8883,
   "n_recordings": 20,
   "evidence": [
    "more electrical buzz between 43 and 55 Hz than the average motor in training",
@@ -364,7 +364,7 @@
   ],
   "urgency": "this week",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -376,18 +376,18 @@
   "verdict": "needs a person",
   "plant_word": "ask a person",
   "how_sure": "low",
-  "line": 0.8186,
-  "band": 0.1244,
-  "medium": 0.1691,
-  "p_median": 0.8901,
+  "line": 0.8235,
+  "band": 0.122,
+  "medium": 0.1646,
+  "p_median": 0.9207,
   "n_recordings": 20,
   "evidence": [
-   "more electrical buzz between 3,536 and 4,515 Hz than the average motor in training",
-   "less electrical buzz between 2,769 and 3,536 Hz than the average motor in training"
+   "less electrical buzz between 2,769 and 3,536 Hz than the average motor in training",
+   "more electrical buzz between 3,536 and 4,515 Hz than the average motor in training"
   ],
   "urgency": "next routine visit, with a manual check",
   "ring": null,
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -399,10 +399,10 @@
   "verdict": "damaged",
   "plant_word": "check bearing",
   "how_sure": "high",
-  "line": 0.8086,
-  "band": 0.1173,
-  "medium": 0.1738,
-  "p_median": 0.9925,
+  "line": 0.8198,
+  "band": 0.1109,
+  "medium": 0.1637,
+  "p_median": 0.988,
   "n_recordings": 20,
   "evidence": [
    "more electrical buzz between 240 and 307 Hz than the average motor in training",
@@ -410,7 +410,7 @@
   ],
   "urgency": "this week",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -422,18 +422,18 @@
   "verdict": "healthy",
   "plant_word": "healthy",
   "how_sure": "high",
-  "line": 0.8086,
-  "band": 0.1173,
-  "medium": 0.1738,
-  "p_median": 0.345,
+  "line": 0.8198,
+  "band": 0.1109,
+  "medium": 0.1637,
+  "p_median": 0.3282,
   "n_recordings": 20,
   "evidence": [
-   "less electrical buzz between 638 and 815 Hz than the average motor in training",
-   "less electrical buzz between 2,168 and 2,769 Hz than the average motor in training"
+   "less electrical buzz between 2,769 and 3,536 Hz than the average motor in training",
+   "less electrical buzz between 638 and 815 Hz than the average motor in training"
   ],
   "urgency": null,
   "ring": null,
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -445,9 +445,9 @@
   "verdict": "damaged",
   "plant_word": "check bearing",
   "how_sure": "medium",
-  "line": 0.8086,
-  "band": 0.1173,
-  "medium": 0.1738,
+  "line": 0.8198,
+  "band": 0.1109,
+  "medium": 0.1637,
   "p_median": 0.9646,
   "n_recordings": 20,
   "evidence": [
@@ -456,7 +456,7 @@
   ],
   "urgency": "next routine visit, with a manual check",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -467,19 +467,19 @@
   "fold": "2",
   "verdict": "damaged",
   "plant_word": "check bearing",
-  "how_sure": "medium",
-  "line": 0.8086,
-  "band": 0.1173,
-  "medium": 0.1738,
-  "p_median": 0.9788,
+  "how_sure": "high",
+  "line": 0.8198,
+  "band": 0.1109,
+  "medium": 0.1637,
+  "p_median": 0.9861,
   "n_recordings": 20,
   "evidence": [
    "more electrical buzz between 500 and 638 Hz than the average motor in training",
-   "more electrical buzz between 2,769 and 3,536 Hz than the average motor in training"
+   "more electrical buzz between 392 and 500 Hz than the average motor in training"
   ],
-  "urgency": "next routine visit, with a manual check",
+  "urgency": "this week",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -491,10 +491,10 @@
   "verdict": "damaged",
   "plant_word": "check bearing",
   "how_sure": "high",
-  "line": 0.7822,
-  "band": 0.0363,
-  "medium": 0.0715,
-  "p_median": 0.8683,
+  "line": 0.787,
+  "band": 0.032,
+  "medium": 0.0703,
+  "p_median": 0.8745,
   "n_recordings": 20,
   "evidence": [
    "less electrical buzz between 71 and 90 Hz than the average motor in training",
@@ -502,7 +502,7 @@
   ],
   "urgency": "this week",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -514,10 +514,10 @@
   "verdict": "healthy",
   "plant_word": "healthy",
   "how_sure": "high",
-  "line": 0.7822,
-  "band": 0.0363,
-  "medium": 0.0715,
-  "p_median": 0.6393,
+  "line": 0.787,
+  "band": 0.032,
+  "medium": 0.0703,
+  "p_median": 0.6268,
   "n_recordings": 20,
   "evidence": [
    "less electrical buzz between 4,515 and 5,765 Hz than the average motor in training",
@@ -525,7 +525,7 @@
   ],
   "urgency": null,
   "ring": null,
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -537,10 +537,10 @@
   "verdict": "needs a person",
   "plant_word": "ask a person",
   "how_sure": "low",
-  "line": 0.7822,
-  "band": 0.0363,
-  "medium": 0.0715,
-  "p_median": 0.7925,
+  "line": 0.787,
+  "band": 0.032,
+  "medium": 0.0703,
+  "p_median": 0.7927,
   "n_recordings": 20,
   "evidence": [
    "less electrical buzz between 4,515 and 5,765 Hz than the average motor in training",
@@ -548,7 +548,7 @@
   ],
   "urgency": "next routine visit, with a manual check",
   "ring": null,
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -560,10 +560,10 @@
   "verdict": "damaged",
   "plant_word": "check bearing",
   "how_sure": "high",
-  "line": 0.7785,
-  "band": 0.0958,
+  "line": 0.7801,
+  "band": 0.1001,
   "medium": 0.1703,
-  "p_median": 0.9631,
+  "p_median": 0.9669,
   "n_recordings": 20,
   "evidence": [
    "more electrical buzz between 4,515 and 5,765 Hz than the average motor in training",
@@ -571,7 +571,7 @@
   ],
   "urgency": "this week",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -583,18 +583,18 @@
   "verdict": "damaged",
   "plant_word": "check bearing",
   "how_sure": "high",
-  "line": 0.8186,
-  "band": 0.1244,
-  "medium": 0.1691,
-  "p_median": 0.9944,
+  "line": 0.8235,
+  "band": 0.122,
+  "medium": 0.1646,
+  "p_median": 0.9912,
   "n_recordings": 20,
   "evidence": [
    "more electrical buzz between 3,536 and 4,515 Hz than the average motor in training",
-   "less electrical buzz between 188 and 240 Hz than the average motor in training"
+   "more electrical buzz between 147 and 188 Hz than the average motor in training"
   ],
   "urgency": "this week",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -606,10 +606,10 @@
   "verdict": "damaged",
   "plant_word": "check bearing",
   "how_sure": "high",
-  "line": 0.7791,
-  "band": 0.0406,
-  "medium": 0.0854,
-  "p_median": 0.8782,
+  "line": 0.7848,
+  "band": 0.0373,
+  "medium": 0.0792,
+  "p_median": 0.882,
   "n_recordings": 20,
   "evidence": [
    "more electrical buzz between 4,515 and 5,765 Hz than the average motor in training",
@@ -617,7 +617,7 @@
   ],
   "urgency": "this week",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -626,21 +626,21 @@
   "origin": "artificial",
   "label": 1,
   "fold": "5",
-  "verdict": "damaged",
-  "plant_word": "check bearing",
-  "how_sure": "medium",
-  "line": 0.7791,
-  "band": 0.0406,
-  "medium": 0.0854,
-  "p_median": 0.8204,
+  "verdict": "needs a person",
+  "plant_word": "ask a person",
+  "how_sure": "low",
+  "line": 0.7848,
+  "band": 0.0373,
+  "medium": 0.0792,
+  "p_median": 0.8173,
   "n_recordings": 20,
   "evidence": [
-   "less electrical buzz between 188 and 240 Hz than the average motor in training",
-   "more electrical buzz between 500 and 638 Hz than the average motor in training"
+   "less electrical buzz between 4,515 and 5,765 Hz than the average motor in training",
+   "less electrical buzz between 3,536 and 4,515 Hz than the average motor in training"
   ],
   "urgency": "next routine visit, with a manual check",
-  "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "ring": null,
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -652,10 +652,10 @@
   "verdict": "healthy",
   "plant_word": "healthy",
   "how_sure": "high",
-  "line": 0.7791,
-  "band": 0.0406,
-  "medium": 0.0854,
-  "p_median": 0.6073,
+  "line": 0.7848,
+  "band": 0.0373,
+  "medium": 0.0792,
+  "p_median": 0.6283,
   "n_recordings": 20,
   "evidence": [
    "less electrical buzz between 4,515 and 5,765 Hz than the average motor in training",
@@ -663,7 +663,7 @@
   ],
   "urgency": null,
   "ring": null,
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -675,10 +675,10 @@
   "verdict": "damaged",
   "plant_word": "check bearing",
   "how_sure": "medium",
-  "line": 0.8186,
-  "band": 0.1244,
-  "medium": 0.1691,
-  "p_median": 0.9827,
+  "line": 0.8235,
+  "band": 0.122,
+  "medium": 0.1646,
+  "p_median": 0.9813,
   "n_recordings": 20,
   "evidence": [
    "more electrical buzz between 71 and 90 Hz than the average motor in training",
@@ -686,7 +686,7 @@
   ],
   "urgency": "next routine visit, with a manual check",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -698,10 +698,10 @@
   "verdict": "healthy",
   "plant_word": "healthy",
   "how_sure": "high",
-  "line": 0.7785,
-  "band": 0.0958,
+  "line": 0.7801,
+  "band": 0.1001,
   "medium": 0.1703,
-  "p_median": 0.4538,
+  "p_median": 0.4565,
   "n_recordings": 20,
   "evidence": [
    "less electrical buzz between 2,769 and 3,536 Hz than the average motor in training",
@@ -709,7 +709,7 @@
   ],
   "urgency": null,
   "ring": null,
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  },
  {
@@ -721,10 +721,10 @@
   "verdict": "damaged",
   "plant_word": "check bearing",
   "how_sure": "medium",
-  "line": 0.8186,
-  "band": 0.1244,
-  "medium": 0.1691,
-  "p_median": 0.9843,
+  "line": 0.8235,
+  "band": 0.122,
+  "medium": 0.1646,
+  "p_median": 0.9836,
   "n_recordings": 20,
   "evidence": [
    "less electrical buzz between 115 and 147 Hz than the average motor in training",
@@ -732,7 +732,7 @@
   ],
   "urgency": "next routine visit, with a manual check",
   "ring": "cannot tell",
-  "detector": "round 3: shape_fleet+rf",
+  "detector": "round 4: shape_fleet+rf (force removed)",
   "setting": "16k_12b"
  }
 ]

@@ -31,7 +31,7 @@ export function AboutPage({ data }: { data: AppData }) {
           <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
             <path d="M0,0 L10,5 L0,10 z" fill="var(--ink-2)" /></marker></defs>
           <Box x={10} y={30} w={180} h={62} title="Motor current" sub="what a drive already measures" />
-          <Box x={230} y={30} w={190} h={62} title="Small detector" sub={data.proof.plant_round === 3 ? 'hiss vs fleet, runs anywhere' : 'hiss shape, runs anywhere'} />
+          <Box x={230} y={30} w={190} h={62} title="Small detector" sub={data.proof.plant_round >= 3 ? 'hiss vs fleet, runs anywhere' : 'hiss shape, runs anywhere'} />
           <Box x={460} y={30} w={170} h={62} title="Fact sheet" sub="status, how sure, signs" />
           <rect x={430} y={128} width={300} height={186} rx={12} fill="var(--signal-soft)" stroke="var(--signal)" strokeWidth={2} />
           <text x={446} y={152} style={{ fontWeight: 800, fontSize: 15, fill: 'var(--signal)' }}>AMD Token Factory: open models on AMD GPUs</text>

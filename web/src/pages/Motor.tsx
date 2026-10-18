@@ -3,6 +3,7 @@ import type { AppData } from '../data'
 import { num, sortMotors } from '../data'
 import { HissChart, svgToPng } from '../components/HissChart'
 import { Gauge } from '../components/Gauge'
+import { VerdictBar } from '../components/VerdictBar'
 import { Term } from '../components/Term'
 import { StatusPill } from './Plant'
 import { isAmd, post, type AnswerReply, type ExplainReply, type NoteReply } from '../api'
@@ -12,6 +13,19 @@ const QUESTIONS = ['Why do you think so?', 'What should I check?', "What does 'h
 
 const ORIGIN: Record<string, string> = { healthy: 'a healthy bearing', artificial: 'a bearing with lab-made damage',
   real: 'a bearing with real wear damage' }
+
+// The pitch slices named in the detector's evidence ("more electrical buzz between 4,515 and 5,765 Hz ...").
+function signsOf(evidence: string[], edges: number[]) {
+  const out: { i: number; more: boolean }[] = []
+  for (const e of evidence) {
+    const r = /between ([\d,]+) and ([\d,]+) Hz/.exec(e)
+    if (!r) continue
+    const lo = Number(r[1].replace(/,/g, ''))
+    const i = edges.findIndex((x, k) => k < edges.length - 1 && Math.round(x) === lo)
+    if (i >= 0) out.push({ i, more: e.startsWith('more') })
+  }
+  return out
+}
 
 function Thinking({ label }: { label: string }) {
   return <span className="row small muted" style={{ gap: 8 }}><span className="thinking"><i /><i /><i /></span>{label}</span>
@@ -29,7 +43,7 @@ export function MotorPage({ data, id, online }: { data: AppData; id?: string; on
   const idx = ordered.indexOf(m)
   const prev = ordered[(idx - 1 + ordered.length) % ordered.length]
   const next = ordered[(idx + 1) % ordered.length]
-  const [show, setShow] = useState({ healthy: true, notes: true, listen: true, diff: true })
+  const [show, setShow] = useState({ healthy: true, notes: true, listen: true, diff: true, signs: true })
   const [note, setNote] = useState<NoteReply | null>(null)
   const [tab, setTab] = useState<'amd' | 'template'>('amd')
   const [explain, setExplain] = useState<ExplainReply | null>(null)
@@ -64,7 +78,7 @@ export function MotorPage({ data, id, online }: { data: AppData; id?: string; on
     if (!chart.current) return
     setExplaining(true)
     try {
-      const image = await svgToPng(chart.current)
+      const image = await svgToPng(chart.current, 0.7)   // about 600 px wide: larger pictures ran AMD's vision model out of memory
       setExplain(await post<ExplainReply>('explain', { motor: m.motor_name, image, diff: show.diff }))
     } catch (e) {
       setExplain({ text: `Could not reach the assistant: ${(e as Error).message}`, source: 'template', problems: [] })
@@ -73,6 +87,7 @@ export function MotorPage({ data, id, online }: { data: AppData; id?: string; on
 
   const values = data.hiss.per_bearing[m.bearing]
   const outside = values ? values.filter((v, i) => v > data.hiss.healthy_high[i] + 1 || v < data.hiss.healthy_low[i] - 1).length : 0
+  const signs = signsOf(m.evidence, data.hiss.edges)
   const toggle = (k: keyof typeof show) => setShow(s => ({ ...s, [k]: !s[k] }))
 
   return (
@@ -89,6 +104,17 @@ export function MotorPage({ data, id, online }: { data: AppData; id?: string; on
         <a className="btn ghost" href={`#/motor/${num(next)}`} aria-label={`Next: ${next.motor_name}`}>›</a>
       </div>
 
+      <section className="panel stack" aria-labelledby="verdict-h">
+        <h2 id="verdict-h">What the detector decided</h2>
+        <VerdictBar m={m} />
+        <p className="small muted">
+          How it decides: the detector learned from other bearings, never this one. It listens to 26 pitches of the
+          current at once and adds up many tiny differences into one hidden score. Red zone: check bearing. Amber
+          middle: too close to call, so a person decides. Green: healthy. We show the zone, not the score: on bearings
+          it had never seen, the score was not reliable enough to read as a percentage.
+        </p>
+      </section>
+
       <section className="panel stack" aria-labelledby="hiss-h">
         <div className="row">
           <h2 id="hiss-h">What its current sounds like</h2>
@@ -98,20 +124,30 @@ export function MotorPage({ data, id, online }: { data: AppData; id?: string; on
             <button className="chip" aria-pressed={show.healthy} onClick={() => toggle('healthy')}>Healthy range</button>
             <button className="chip" aria-pressed={show.notes} onClick={() => toggle('notes')}>Bearing notes</button>
             <button className="chip" aria-pressed={show.listen} onClick={() => toggle('listen')}>Where it listens</button>
+            {signs.length > 0 && <button className="chip" aria-pressed={show.signs} onClick={() => toggle('signs')}>Top signs</button>}
           </div>
         </div>
         <p className="small muted">
           Blue: this motor's <Term k="hiss">hiss</Term> at each <Term k="pitch">pitch</Term>{show.diff ? ', minus the middle of the healthy bearings' : ''}.
           Grey: where the six healthy lab bearings sit. Red dashes: the <Term k="bearingNotes">bearing notes</Term>. Yellow: <Term k="listens">where
-          the detector listens</Term>. Point at the chart for numbers.
+          the detector listens</Term> on average. Purple dots 1 and 2: this motor's top signs. Point at the chart for numbers.
         </p>
         {values && <HissChart ref={chart} hiss={data.hiss} values={values}
-          showHealthy={show.healthy} showNotes={show.notes} showListen={show.listen} diff={show.diff} />}
+          showHealthy={show.healthy} showNotes={show.notes} showListen={show.listen} diff={show.diff} signs={show.signs ? signs : []} />}
         {values && <p className="small"><b>{outside === 0
           ? "At every pitch this motor stays inside the healthy bearings' spread."
           : `At ${outside} of ${values.length} pitch slices this motor leaves the healthy bearings' spread.`}</b>{' '}
           The detector does not rely on one pitch: it adds up many small shifts of 1 to 2 dB, which is why the
           verdict can differ even when the lines look alike.</p>}
+        {signs.length > 0 && show.signs && (
+          <p className="small" style={{ borderLeft: '3px solid var(--sign)', paddingLeft: 10 }}>
+            <b style={{ color: 'var(--sign)' }}>Purple: the {signs.length === 1 ? 'pitch' : `${signs.length} pitches`} that
+            pushed this verdict most</b>{' '}
+            ({m.evidence.map((e, k) => `sign ${k + 1}: ${e.replace(' than the average motor in training', '')}`).join('; ')}).
+            Each sign compares this motor with the average motor in training, not with the grey band, so a sign can sit
+            inside the grey band. A sign counts more when the detector cares about that pitch and this motor is unusual there.
+          </p>
+        )}
         <div className="row">
           <button className="btn amd" onClick={runExplain} disabled={explaining}>
             {explaining ? 'Reading the chart…' : 'Explain this chart'}

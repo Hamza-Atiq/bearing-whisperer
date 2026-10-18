@@ -29,8 +29,8 @@ def track_record() -> str:
     return (f"round {rnd['round']}: honest balanced accuracy on unseen bearings {q['ba']:.2f} "
             f"(95% range {q['ci'][0]:.2f} to {q['ci'][1]:.2f}); it held only at loads it was trained on"
             if p["plant_round"] < 3 else
-            f"round 3: honest balanced accuracy on unseen bearings {q['ba']:.2f} (95% range {q['ci'][0]:.2f} to "
-            f"{q['ci'][1]:.2f})")
+            f"round {rnd['round']}: honest balanced accuracy on unseen bearings {q['ba']:.2f} (95% range "
+            f"{q['ci'][0]:.2f} to {q['ci'][1]:.2f})")
 
 
 def motor_or_error(name):
@@ -50,7 +50,9 @@ def chart_facts(m, diff: bool = True) -> dict:
             "evidence note": "the detector's evidence compares with the average motor in training, not with the grey band",
             "marked pitches": f"outer-ring pitch {h['bearing_pitches']['outer ring']} Hz, inner-ring pitch "
                               f"{h['bearing_pitches']['inner ring']} Hz",
-            "shaded area": "the pitches the detector leans on most",
+            "shaded area": "the pitches the detector leans on most, on average over all motors",
+            "purple dashed columns marked 'sign 1' and 'sign 2'": "this motor's top signs: the pitches in its evidence, "
+                                                                   "which pushed its verdict most",
             "pitch range shown": f"{h['edges'][0]:.0f} to {h['edges'][-1]:,.0f} Hz",
             "outside the healthy band": outside_band(m) or "none: the blue line stays inside or close to the grey band"}
 

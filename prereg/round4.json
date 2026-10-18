@@ -1,0 +1,35 @@
+{
+  "written": "2026-10-18",
+  "spec_version": "v12",
+  "why": "Two findings of the 18 Oct audit. (1) Round 3's fleet normal grouped recordings by the full condition name, which includes the radial force (F04/F10); FR-002 says a drive cannot know that force. (2) The published audit we compare with (Cekic and Akan, Energies 2026) splits by bearing AND leaves each operating condition out in turn; our round 3 only swapped two loads, so the comparison was not like for like. Round 4 fixes (1) and runs (2). Rounds 1 to 3 stay reported.",
+  "round1_fingerprint": "383402e7d27e20edc020ccb39160393b587bca00d18fd59b30eb2925d394173e",
+  "round2_fingerprint": "c3f518734dac9dd3832994e9f44764702d43107f11f3ecffd3d14598b3d70222",
+  "round3_fingerprint": "85a1fc6046bd3c245a77c13a38a640b30144e4467f99f3d927c5234138e84264",
+  "already_seen_before_this_seal": "The 18 Oct audit check (research/force-check-2026-10-18.json) ran this detector's same-load test once at lab (0.8138) and 16k_12b (0.8202) to size the force problem. Those two numbers were seen before this seal; nothing below was chosen because of them. Everything else here is unseen.",
+  "detector": "shape_fleet+rf",
+  "fleet_normal": "for each drive setting (speed and torque only, the force part dropped as FR-002 says) and each feature: (x - median) / (IQR + 1e-6), median and IQR over the usable recordings of the reference bearings at that setting, without labels. Reference bearings = the training bearings of the fold (inner folds: the inner training bearings). Setting columns stay raw.",
+  "candidates_reported_not_chosen": [
+    {"name": "shape+rf", "features": ["band_"], "normal": "none", "note": "never looks at any recording from the test condition except the test bearing's own"},
+    {"name": "shape_fleet+rf", "features": ["band_"], "normal": "fleet"},
+    {"name": "all_fleet+rf", "features": ["band_", "contrast_", "click_"], "normal": "fleet"}
+  ],
+  "model": "as round 3 (round 2's forest, random_state=0)",
+  "same_load_test": "as round 3: round-1 folds, all four conditions mixed; settings lab, 32k_12b, 16k_12b, 8k_12b, 16k_10b (detector only)",
+  "new_load_test": "as round 3: N15_M07_F10 -> N15_M01_F10 and the reverse, at lab and 16k_12b, every candidate",
+  "leave_one_condition_out": {
+    "why": "the published protocol (Cekic and Akan 2026): bearing-level split plus each operating condition held out in turn",
+    "test": "for each of the four conditions: labels only from the fold's training bearings at the other three conditions; the test bearings at the held-out condition scored once; the fleet normal at the held-out drive setting uses the training bearings' recordings at that setting without labels (HR-20); calibration, line and band from inner out-of-fold scores at the training conditions",
+    "settings": ["lab", "16k_12b"],
+    "candidates": "every candidate above",
+    "report": "per held-out condition: balanced accuracy with its 95% range, false alarms, misses, hand-off view; and the plain mean over the four held-out conditions (their 'all-split mean')",
+    "subsets": "from the same predictions, balanced accuracy of healthy against: real wear on one ring (KA04 KA15 KA16 KA22 KA30 KI04 KI14 KI16 KI17 KI18 KI21; closest to their aged-only targets), all real wear (adds KB23 KB24 KB27), lab-made damage, and all damage (closest to their artificial-plus-aged target D)"
+  },
+  "differences_we_state": "Cekic and Akan used CNNs on time-frequency images and their own split seeds; we use our sealed round-1 folds. Our fleet normal uses unlabelled recordings of the training bearings at the test condition; theirs did not (as far as their abstract says). The shape+rf candidate does not, and is shown beside it. Only six healthy bearings exist.",
+  "seen_bearings_number": "as round 3, with this fleet normal, at lab and 16k_12b",
+  "ring_fr003": "as round 3 (same rule, same show rule), with this fleet normal",
+  "damage_size_fr014": "as round 3, from round 4's same-load predictions",
+  "authors_split_fr020": "as round 3, with this fleet normal",
+  "plant_switch": "the plant view moves to round 4 at 16k_12b whatever its score, because round 3 breaks FR-002; round 3's plant view stays reported",
+  "same_as_round1": ["folds", "line rule", "handoff_share", "medium_upto_share", "urgency", "plant condition, combine and min_recordings", "bootstrap", "flag_gap_ba"],
+  "reported": "all four rounds; every candidate's own score in every test; the audit check that came first"
+}

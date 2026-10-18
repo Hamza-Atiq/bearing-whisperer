@@ -6555,13 +6555,13 @@
   }
  },
  "plant": {
-  "catch_rate": 0.7308,
+  "catch_rate": 0.6923,
   "false_alarm_rate": 0.0,
   "handoff_healthy": 0.3333,
-  "handoff_damaged": 0.1154,
+  "handoff_damaged": 0.1538,
   "n_healthy": 6,
   "n_damaged": 26,
-  "ece": 0.1119,
+  "ece": 0.1102,
   "percent_ok": false
  },
  "load_shift": {
@@ -16556,5 +16556,19 @@
   "n_damaged": 26,
   "ece": 0.0884,
   "percent_ok": true
+ },
+ "round4": {
+  "fingerprint_round4": "e49358b0f505ffb36814b286589f59703c701050abe651e54af66c2f727f2626",
+  "plant_switched": true
+ },
+ "plant_round3": {
+  "catch_rate": 0.7308,
+  "false_alarm_rate": 0.0,
+  "handoff_healthy": 0.3333,
+  "handoff_damaged": 0.1154,
+  "n_healthy": 6,
+  "n_damaged": 26,
+  "ece": 0.1119,
+  "percent_ok": false
  }
 }

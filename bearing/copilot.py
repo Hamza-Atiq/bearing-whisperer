@@ -7,12 +7,15 @@ answers instead and says so.
 """
 import json
 import re
+import time
 
 import requests
 
 from . import assistant, notes
 
 MAX_STEPS = 5
+EXPLAIN_BUDGET_S = 45          # all model tries together; the web host stops a request at 60 s
+PLAN_BUDGET_S = 45             # same limit for the shift plan's tool loop
 STATUS_RANK = {"check bearing": 0, "ask a person": 1, "healthy": 2}
 SURE_RANK = {"high": 0, "medium": 1, "low": 2}
 
@@ -89,14 +92,14 @@ def _motor_name(text: str) -> str:
     return f"Motor {int(m.group(1)):02d}" if m else (text or "")
 
 
-def _call(model, messages, key, post, tools=None, max_tokens=900):
+def _call(model, messages, key, post, tools=None, max_tokens=900, timeout=None):
     body = {"model": model, "max_tokens": max_tokens, "messages": messages}
     if tools:
         body["tools"] = tools
     if model.startswith("Qwen"):
         body["reasoning_effort"] = "low"
         body["max_tokens"] = max(max_tokens, 2000)
-    r = post(f"{assistant.BASE_URL}/chat/completions", json=body, timeout=assistant.TIMEOUT_S,
+    r = post(f"{assistant.BASE_URL}/chat/completions", json=body, timeout=timeout or assistant.TIMEOUT_S,
              headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
     if r.status_code != 200:
         raise RuntimeError(f"HTTP {r.status_code}")
@@ -168,14 +171,21 @@ def plan_shift(motors, track_record, minutes, per_check, request, key, skip=(), 
     tools = Tools(motors, track_record)
     problems, steps = [], []
     if key:
+        deadline = time.monotonic() + PLAN_BUDGET_S
         for model in assistant.MODELS:
+            if deadline - time.monotonic() < 5:
+                problems.append(f"{model}: skipped, out of time")
+                continue
             tools.calls, tools.seen_text = [], []
             messages = [{"role": "system", "content": PLAN_SYSTEM},
                         {"role": "user", "content": f"I have {minutes} minutes. One check takes about {per_check} "
                                                     f"minutes. Skip: {', '.join(skip) or 'none'}. {request}".strip()}]
             try:
                 for _ in range(MAX_STEPS):
-                    msg = _call(model, messages, key, post, TOOLS)
+                    left = deadline - time.monotonic()
+                    if left < 5:
+                        raise TimeoutError("out of time")
+                    msg = _call(model, messages, key, post, TOOLS, timeout=left)
                     calls = msg.get("tool_calls") or []
                     if not calls:
                         plan = _json_from(msg.get("content", ""))
@@ -215,13 +225,18 @@ def explain_chart(image_data_url: str, facts: dict, chart_facts: dict, key, post
     problems = []
     if key and image_data_url.startswith("data:image/png;base64,"):
         text_facts = f"Detector facts:\n{assistant._facts_text(facts)}\nChart facts:\n{assistant._facts_text(chart_facts)}"
+        deadline = time.monotonic() + EXPLAIN_BUDGET_S
         for model in assistant.MODELS:
+            left = deadline - time.monotonic()
+            if left < 5:
+                problems.append(f"{model}: skipped, out of time")
+                continue
             try:
                 msg = _call(model, [{"role": "system", "content": EXPLAIN_SYSTEM},
                                     {"role": "user", "content": [
                                         {"type": "text", "text": text_facts},
                                         {"type": "image_url", "image_url": {"url": image_data_url}}]}],
-                            key, post, max_tokens=400)
+                            key, post, max_tokens=400, timeout=left)
                 text = (msg.get("content") or "").strip()
                 found = check_explanation(text, facts, allowed)
                 if not found:

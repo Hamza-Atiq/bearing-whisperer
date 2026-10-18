@@ -83,3 +83,8 @@
 {"key": "round3|16k_12b", "fingerprint_round3": "85a1fc6046bd3c245a77c13a38a640b30144e4467f99f3d927c5234138e84264", "forced_ba": 0.8194, "new_load": {"N15_M07_F10->N15_M01_F10": 0.7523, "N15_M01_F10->N15_M07_F10": 0.7663}}
 {"key": "round3|8k_12b", "fingerprint_round3": "85a1fc6046bd3c245a77c13a38a640b30144e4467f99f3d927c5234138e84264", "forced_ba": 0.7241, "new_load": {}}
 {"key": "round3|16k_10b", "fingerprint_round3": "85a1fc6046bd3c245a77c13a38a640b30144e4467f99f3d927c5234138e84264", "forced_ba": 0.8314, "new_load": {}}
+{"key": "round4|lab", "fingerprint_round4": "e49358b0f505ffb36814b286589f59703c701050abe651e54af66c2f727f2626", "forced_ba": 0.8138, "loco_mean": 0.7841, "new_load": {"N15_M07_F10->N15_M01_F10": 0.8011, "N15_M01_F10->N15_M07_F10": 0.8362}}
+{"key": "round4|32k_12b", "fingerprint_round4": "e49358b0f505ffb36814b286589f59703c701050abe651e54af66c2f727f2626", "forced_ba": 0.8191, "loco_mean": null, "new_load": {}}
+{"key": "round4|16k_12b", "fingerprint_round4": "e49358b0f505ffb36814b286589f59703c701050abe651e54af66c2f727f2626", "forced_ba": 0.8202, "loco_mean": 0.8126, "new_load": {"N15_M07_F10->N15_M01_F10": 0.7667, "N15_M01_F10->N15_M07_F10": 0.7776}}
+{"key": "round4|8k_12b", "fingerprint_round4": "e49358b0f505ffb36814b286589f59703c701050abe651e54af66c2f727f2626", "forced_ba": 0.7196, "loco_mean": null, "new_load": {}}
+{"key": "round4|16k_10b", "fingerprint_round4": "e49358b0f505ffb36814b286589f59703c701050abe651e54af66c2f727f2626", "forced_ba": 0.8197, "loco_mean": null, "new_load": {}}

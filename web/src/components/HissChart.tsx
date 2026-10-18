@@ -13,6 +13,7 @@ export interface HissProps {
   showListen?: boolean
   compact?: boolean
   diff?: boolean
+  signs?: { i: number; more: boolean }[]   // this motor's top signs: pitch slices that pushed its verdict most
   width?: number
   height?: number
   title?: string
@@ -21,7 +22,7 @@ export interface HissProps {
 const fmtHz = (x: number) => (x >= 1000 ? `${(x / 1000).toFixed(x >= 10000 ? 0 : 1)} kHz` : `${Math.round(x)} Hz`)
 
 export const HissChart = forwardRef<SVGSVGElement, HissProps>(function HissChart(
-  { hiss, values, color = 'var(--signal)', showHealthy = true, showNotes = true, showListen = true, compact = false, diff = false,
+  { hiss, values, color = 'var(--signal)', showHealthy = true, showNotes = true, showListen = true, compact = false, diff = false, signs = [],
     width = 860, height = 300, title }, ref) {
   const [hover, setHover] = useState<number | null>(null)
   const m = compact ? { l: 4, r: 4, t: 4, b: 4 } : { l: 52, r: 16, t: 26, b: showListen ? 74 : 40 }
@@ -66,6 +67,12 @@ export const HissChart = forwardRef<SVGSVGElement, HissProps>(function HissChart
         <rect key={i} x={x(hiss.edges[i])} width={x(hiss.edges[i + 1]) - x(hiss.edges[i])} y={m.t} height={H}
           fill="var(--listen)" opacity={(w / maxW) * 0.45} />
       ))}
+      {!compact && signs.map((s, k) => (
+        <g key={`sign${k}`}>
+          <rect x={x(hiss.edges[s.i])} width={x(hiss.edges[s.i + 1]) - x(hiss.edges[s.i])} y={m.t} height={H}
+            fill="var(--sign)" opacity={0.12} stroke="var(--sign)" strokeWidth={1.5} strokeDasharray="5 3" />
+        </g>
+      ))}
       {showHealthy && <path d={area} fill="var(--ghost)" opacity={compact ? 0.45 : 0.55} />}
       {showHealthy && !compact && <path d={line(hMed)} fill="none" stroke="#8795a3" strokeWidth={1.5} strokeDasharray="4 4" />}
       {showNotes && notes.map(([name, hz]) => (
@@ -83,6 +90,13 @@ export const HissChart = forwardRef<SVGSVGElement, HissProps>(function HissChart
       <path d={line(values)} fill="none" stroke={color} strokeWidth={compact ? 2 : 2.75} strokeLinejoin="round" />
       {!compact && values.map((v, i) => (
         <circle key={i} cx={x(centers[i])} cy={y(v)} r={hover === i ? 5.5 : 3} fill={color} />
+      ))}
+      {!compact && signs.map((s, k) => (
+        <g key={`sd${k}`}>
+          <circle cx={x(centers[s.i])} cy={y(values[s.i])} r={10} fill="var(--sign)" stroke="#fff" strokeWidth={2} />
+          <text x={x(centers[s.i])} y={y(values[s.i]) + 4.5} textAnchor="middle"
+            style={{ fill: '#fff', fontWeight: 800, fontSize: 12.5 }}>{k + 1}</text>
+        </g>
       ))}
       {!compact && values.map((_, i) => (
         <rect key={i} x={x(hiss.edges[i])} width={x(hiss.edges[i + 1]) - x(hiss.edges[i])} y={m.t} height={H}

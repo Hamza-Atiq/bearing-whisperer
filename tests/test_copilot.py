@@ -103,6 +103,37 @@ def test_explanation_is_checked_and_falls_back():
     assert out["source"] == "template" and "check bearing" in out["text"]
 
 
+def test_plan_stops_within_its_time_budget(monkeypatch):
+    clock = [0.0]
+    monkeypatch.setattr(copilot.time, "monotonic", lambda: clock[0])
+    timeouts = []
+
+    def slow_post(url, json=None, timeout=None, **kw):     # each step uses up half of what is left
+        timeouts.append(timeout)
+        clock[0] += timeout / 2
+        return Reply(tool_call("get_fleet", {}))
+    out = copilot.plan_shift(MOTORS, "0.80", 40, 20, "", "k", post=slow_post)
+    assert out["source"] == "rule"
+    assert sum(t / 2 for t in timeouts) <= copilot.PLAN_BUDGET_S
+    assert all(t <= copilot.PLAN_BUDGET_S for t in timeouts)
+
+
+def test_explanation_stops_within_its_time_budget(monkeypatch):
+    from bearing import notes
+    clock = [0.0]
+    monkeypatch.setattr(copilot.time, "monotonic", lambda: clock[0])
+    timeouts = []
+
+    def slow_post(url, json=None, timeout=None, **kw):    # the service hangs until the time limit
+        timeouts.append(timeout)
+        clock[0] += timeout
+        raise TimeoutError
+    out = copilot.explain_chart("data:image/png;base64,AAA", notes.facts_for(MOTORS[0]), {}, "k", post=slow_post)
+    assert out["source"] == "template"
+    assert timeouts == [copilot.EXPLAIN_BUDGET_S]           # the second model is skipped, not given another wait
+    assert "out of time" in out["problems"][-1]
+
+
 def test_plan_summary_numbers_must_come_from_tools_or_simple_sums():
     seen = json.dumps({"motors": [{"motor": m["motor_name"]} for m in MOTORS]})
     visits = [{"motor": "Motor 01", "reason": ""}, {"motor": "Motor 04", "reason": ""}]

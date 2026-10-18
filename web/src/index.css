@@ -15,6 +15,7 @@
   --check-soft: #f8e0dd;
   --ghost: #b7c2cc;
   --listen: #f3d77a;
+  --sign: #7a3fc4;
   --amd: #18232e;
   --radius-s: 4px;
   --radius-m: 8px;
@@ -155,6 +156,25 @@ main { max-width: 1180px; margin: 0 auto; padding: 22px 20px 60px; }
 .ask-box { display: flex; gap: 8px; }
 .ask-box input { flex: 1; padding: 9px 12px; border: 1px solid var(--rule); border-radius: var(--radius-s); background: #fff; }
 .answer { padding: 12px 14px; border-left: 3px solid var(--signal); background: var(--signal-soft); border-radius: 0 6px 6px 0; }
+.vbar { padding: 4px 0 2px; }
+.vbar-track { position: relative; display: flex; height: 30px; border-radius: 6px; overflow: visible; }
+.vbar-zone {
+  display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.vbar-zone.ok { background: var(--ok-soft); color: var(--ok); border-radius: 6px 0 0 6px; }
+.vbar-zone.ask { background: var(--ask-soft); color: #9a6a00; }
+.vbar-zone.check { background: var(--check-soft); color: var(--check); border-radius: 0 6px 6px 0; }
+.vbar-dot {
+  position: absolute; top: 50%; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%;
+  background: var(--ink); border: 3px solid #fff; box-shadow: 0 0 0 2px var(--ink);
+}
+.vbar-steps { position: relative; height: 34px; margin-top: 6px; }
+.vbar-steps span {
+  position: absolute; transform: translateX(-50%); width: 19%; text-align: center; font-size: 12.5px;
+  line-height: 1.2; color: var(--ink-3);
+}
+.vbar-steps span.on { color: var(--ink); font-weight: 700; }
 .thinking { display: inline-flex; gap: 4px; }
 .thinking i { width: 6px; height: 6px; border-radius: 50%; background: var(--signal); animation: blink 1s infinite; }
 .thinking i:nth-child(2) { animation-delay: 0.15s; }

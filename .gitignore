@@ -22,3 +22,6 @@ web/node_modules/
 web/dist/
 .vercel/
 web/.vercel/
+
+# local browser-test output
+.playwright-mcp/

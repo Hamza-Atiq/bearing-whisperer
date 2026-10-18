@@ -46,6 +46,8 @@ export interface Round {
   candidates?: Record<string, Record<string, { same_load: number; ci: number[]; new_load?: Record<string, number> }>>
 }
 
+export interface Sub { ba: number | null; ci: (number | null)[]; n_damaged_bearings: number }
+
 export interface Proof {
   rounds: Round[]
   plant_round: number
@@ -67,6 +69,16 @@ export interface Proof {
     null_summary: { n: number; mean: number; max: number; share_at_or_above_real: number };
     runin_flagged: Record<string, number>; runin_hours: Record<string, string> }
   cekic_akan: number
+  plant_lab?: Run | null
+  loco?: Record<string, { per_condition: Record<string, Run>; mean_ba: number | null; pooled: Run;
+    subsets: Record<string, Sub> }>
+  loco_candidates?: Record<string, Record<string, { loco_mean: number | null; loco: Record<string, number | null>;
+    subsets: Record<string, Sub> }>>
+  published?: {
+    cekic_akan: { cite: string; protocol: string; target_a: { ba: number; what: string };
+      target_d: { ba: number; specificity: number; what: string }; target_d_note: string }
+    lessmeier: { cite: string; mcs_low: number; mcs_high: number; mcs_ensemble: number; guess: number }
+  }
   questions: { n: number; auto_ok: number; must_decline: number; declined: number; claude_ok: number;
     human_ok: (boolean | null)[] }
 }
@@ -117,6 +129,11 @@ export const f2 = (x: number | null | undefined) => (x == null ? 'n/a' : x.toFix
 export const QUALITY_LABEL: Record<string, string> = {
   lab: 'Lab quality (64 kHz)', '32k_12b': '32 kHz, 12-bit', '16k_12b': '16 kHz, 12-bit',
   '8k_12b': '8 kHz, 12-bit', '16k_10b': '16 kHz, 10-bit',
+}
+
+export const CONDITION_LABEL: Record<string, string> = {
+  N15_M07_F10: 'normal (1,500 rpm, 0.7 Nm)', N09_M07_F10: 'slower (900 rpm)', N15_M01_F10: 'light load (0.1 Nm)',
+  N15_M07_F04: 'less side force (400 N)',
 }
 
 export const LOAD_LABEL: Record<string, string> = {
